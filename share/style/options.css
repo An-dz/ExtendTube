@@ -415,7 +415,8 @@ ul.sub-group.h50 {
 	height: 100em;
 }
 ul.sub-group > li.h7 {
-	height: 14em;
+	min-height: 14em;
+	height: auto;
 }
 ul.sub-group {
 	position: relative;
@@ -431,7 +432,8 @@ ul.sub-group > li {
 	transition: opacity .5s, height .5s;
 }
 ul.sub-group > li.high {
-	height: 20em;
+	min-height: 20em;
+	height: auto;
 }
 ul.sub-group.h13 li.right-text {
 	padding-right: .5em;
@@ -599,6 +601,7 @@ textarea#customstyle,
 textarea#import-preferences {
 	width: 95%;
 	height: 95%;
+	min-height: 95%;
 	margin-top: .4em;
 }
 .not-saved {

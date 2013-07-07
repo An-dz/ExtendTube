@@ -69,7 +69,7 @@ window.addEventListener("unload", unLoad, false)
 self.yt = {}
 self.config_ = {}
 self.playerConfig = {
-	// Defining args here prevents faliure to load video thumbnails
+	// Defining args here prevents failure to load video thumbnails
 	// when content warning message is displayed (video is inappropriate
 	// for some users).
 	args: {}
@@ -383,6 +383,9 @@ var /**
 		focus: NaN
 	}
 
+/**
+ * @namespace Number
+ */
 if (!Number.prototype.toPaddedString) {
 	/**
 	 * Convert number to string of fixed length. Pad it with defined character.
@@ -454,6 +457,9 @@ if (!Number.prototype.toTimeString) {
 	}
 }
 
+/**
+ * @namespace Element
+ */
 if (!window.Element.prototype.offsetFromTop) {
 	/**
 	 * Top offset for <code>this</code> element.
@@ -593,11 +599,24 @@ function addRatingMeter(thumb, rating) {
 	if (!thumb || !thumb.parentNode || thumb.parentNode.querySelector(".ext-video-rating"))
 		return
 
-	var meter = document.createElement("span"),
-		score = parseInt(rating.numLikes) / parseInt(rating.numRaters) * 100,
+	var score,
+		meter = document.createElement("span"),
+		likebar = document.createElement("span"),
+		dislikebar = document.createElement("span"),
+		likes = parseInt(rating.numLikes),
+		dislikes = parseInt(rating.numDislikes),
 		tooltip = xtt.ll.getString("RATING_NO_DATA")
 
-	meter.setAttribute("class", "ext-video-rating yt-uix-tooltip")
+	if(likes > 0 && dislikes == 0)
+		score = 100
+	else
+		score = parseInt(rating.numLikes) / parseInt(rating.numRaters) * 100
+
+	meter.setAttribute("class", "ext-video-rating yt-uix-tooltip video-extras-sparkbars")
+	likebar.setAttribute("class", "video-extras-sparkbar-likes")
+	dislikebar.setAttribute("class", "video-extras-sparkbar-dislikes")
+	if (preferences.rateout)
+		meter.classList.add("ext-video-rating-outside")
 
 	if (score || score == 0)
 		tooltip = xtt.ll.getString("RATING_LIKE")
@@ -608,9 +627,15 @@ function addRatingMeter(thumb, rating) {
 		score = 50
 	}
 
-	meter.style.setProperty("left", (-100 + score) + "%")
+	likebar.style.setProperty("width", score + "%")
+	dislikebar.style.setProperty("width", (100 - score) + "%")
 	meter.dataset.tooltipText = tooltip
-	thumb.parentNode.appendChild(meter)
+	if (preferences.rateout && thumb.parentNode.childElementCount > 1 && !thumb.parentNode.querySelector(".ext-video-rating"))
+		thumb.parentNode.insertBefore(meter, thumb.parentNode.childNodes[2])
+	else if(preferences.ratevideos || thumb.parentNode.childElementCount <= 1)
+		thumb.parentNode.appendChild(meter)
+	meter.appendChild(likebar)
+	meter.appendChild(dislikebar)
 }
 
 /**
@@ -802,7 +827,7 @@ function connectionLost(event) {
  */
 function controlPlayer(command, data) {
 	if (!xtt.player.playerElement) {
-		log.warn('Player elemenet not available.')
+		log.warn('Player element not available.')
 		return
 	}
 
@@ -1995,7 +2020,7 @@ function makeApi() {
 		 * 3 - buffering
 		 * 5 - cued
 		 *
-		 * @see http://code.google.com/apis/youtube/js_api_reference.html#getPlayerState
+		 * @see https://developers.google.com/youtube/js_api_reference#Playback_status
 		 *
 		 * @type Number
 		 * @default -1
@@ -2006,12 +2031,13 @@ function makeApi() {
 		 * Change video quality. If quality passed by argument is not available
 		 * first lower quality will be set.
 		 *
-		 * @see http://code.google.com/apis/youtube/js_api_reference.html#setPlaybackQuality
+		 * @see https://developers.google.com/youtube/js_api_reference#Playback_quality
 		 *
 		 * @param {String} quality
-		 * Possible options for this argument are: <cite>small</cite>,
-		 * <cite>medium</cite>, <cite>large</cite>, <cite>hd720</cite>,
-		 * <cite>hd1080</cite>, <cite>highres</cite> or <cite>default</cite>.
+		 * Possible options for this argument are: <cite>tiny</cite>,
+		 * <cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,
+		 * <cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>
+		 * or <cite>default</cite>.
 		 * Value <cite>default</cite> will be ignored.
 		 */
 		adjustVideoQuality: function adjustVideoQuality(quality) {
@@ -2530,7 +2556,7 @@ function makeApi() {
 					loopStartTime -= 3
 
 				if (_this.end <= current || current < loopStartTime || xtt.player.state == 0) {
-					log.info('Plyback is out of defined loop section.',
+					log.info('Playback is out of defined loop section.',
 							 'Current time is: ' + current + 's.')
 
 					xtt.player.control("seek", _this.start)
@@ -2897,7 +2923,7 @@ function makeApi() {
 		 *
 		 * @param {String} where
 		 * Where to insert container relative to <code>node</code> element. Possible
-		 * options are: <cite>beforebegin</cite>, <cite>afretbegin</cite>,
+		 * options are: <cite>beforebegin</cite>, <cite>afterbegin</cite>,
 		 * <cite>beforeend</cite> or <cite>afterend</cite>.
 		 * <a href="http://help.dottoro.com/ljbreokf.php">More</a> about this.
 		 *
@@ -3910,6 +3936,7 @@ function makeApi() {
 		getVideoSize: function () {
 			var videoSize = { width: 0, height: 1 },
 				size = {
+					tiny	: { width: 256,  height: 144  },
 					small	: { width: 320,  height: 240  },
 					medium	: { width: 640,  height: 360  },
 					large	: { width: 854,  height: 480  },
@@ -4346,7 +4373,7 @@ function messageReceived(event) {
 		case "preview time":
 			updateThumbPreviewTime(event.data.data.id, event.data.data.time)
 			break
-		case "disable video peview":
+		case "disable video preview":
 			disableThumbPreview(event.data.data.id)
 	}
 }
@@ -4760,6 +4787,10 @@ function preferenceChanged(data) {
 				xtt.ui.remove.thumbPreview()
 				xtt.ui.add.thumbPreview()
 			}
+			break
+		case "rateout":
+			xtt.ui.remove.videoRatings()
+			xtt.ui.add.videoRatings()
 			break
 		case "ratevideos":
 			if (data.data[data.key])
@@ -5600,7 +5631,7 @@ function unLoad(event) {
 
 	if (xtt.video.isPreview) {
 		window.parent.postMessage({
-			subject: "disable video peview",
+			subject: "disable video preview",
 			data: {
 				id: xtt.video.getVideoID()
 			}
@@ -5785,16 +5816,23 @@ function updateRatings(data) {
 	})
 
 	Array.prototype.forEach.call(thumbs, function (anchor) {
-		var thumb = anchor.querySelector(".video-thumb")
+		if (preferences.rateout)
+			var thumb = anchor.parentNode.querySelector(".title, .content-item-title, .video-title, .snippet-action-content")
+		else
+			var thumb = anchor.querySelector(".video-thumb")
+
 		if (!thumb)
 			return
 
 		var id = getVideoID(anchor)
 		if (data.hasOwnProperty(id))
-			addRatingMeter(thumb.querySelector(".yt-thumb-clip"), data[id].rating)
+			if (preferences.rateout)
+				addRatingMeter(thumb, data[id].rating)
+			else
+				addRatingMeter(thumb.querySelector(".yt-thumb-clip"), data[id].rating)
 	})
 
-	// Watch for videos added later and show their rating an well.
+	// Watch for videos added later and show their rating as well.
 	Array.prototype.forEach.call(loadMore, function (node) {
 		node.addEventListener("DOMNodeInserted", xtt.ui.add.videoRatings, false)
 	})

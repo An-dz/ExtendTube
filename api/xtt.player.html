@@ -14,13 +14,12 @@
         <span class="ancestors"><a href="xtt.html">xtt</a>.</span>
     player
     </h2>
-</header>  
-<article>
+</header><article>
     <div class="container-overview">
             <div class="description">Holds information about player and methods to control it.</div>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4903</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 1957</li></ul></dd>
 </dl>
     </div>
         <h3 class="subsection-title">Namespaces</h3>
@@ -31,7 +30,25 @@
         <h3 class="subsection-title">Members</h3>
         <dl>
 <dt>
-    <h4 class="name" id="playcount"><span class="type-signature">&lt;static, readonly> </span>playcount<span class="type-signature"> :Number</span></h4>
+    <h4 class="name" id="api"><span class="type-signature">&lt;static, readonly> </span>api<span class="type-signature"></span></h4>
+</dt>
+<dd>
+    <div class="description">
+        Reference to YouTube Player API.
+    </div>
+<dl class="details">
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 1990</li></ul></dd>
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>https://developers.google.com/youtube/js_api_reference</li>
+        </ul>
+    </dd>
+</dl>
+</dd>
+<dt>
+    <h4 class="name" id="playcount"><span class="type-signature">&lt;static, readonly> </span>playcount<span class="type-signature"> :<a href="Number.html">Number</a></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -39,10 +56,10 @@
 player is reloaded.
     </div>
 <dl class="details">
-	<dt class="tag-default">Default Value:</dt>
-	<dd class="tag-default"><ul class="dummy"><li>0</li></ul></dd>
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4929</li></ul></dd>
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>0</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 1983</li></ul></dd>
 </dl>
 </dd>
 <dt>
@@ -54,18 +71,18 @@ player is reloaded.
 this element.
     </div>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4937</li></ul></dd>
-	<dt class="tag-see">See:</dt>
-	<dd class="tag-see">
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 1998</li></ul></dd>
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
         <ul>
-            <li>http://code.google.com/apis/youtube/js_api_reference.html</li>
+            <li>https://developers.google.com/youtube/js_api_reference</li>
         </ul>
-	</dd>
+    </dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="state"><span class="type-signature">&lt;static, readonly> </span>state<span class="type-signature"> :Number</span></h4>
+    <h4 class="name" id="state"><span class="type-signature">&lt;static, readonly> </span>state<span class="type-signature"> :<a href="Number.html">Number</a></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -78,41 +95,23 @@ this element.
 5 - cued
     </div>
 <dl class="details">
-	<dt class="tag-default">Default Value:</dt>
-	<dd class="tag-default"><ul class="dummy"><li>-1</li></ul></dd>
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4963</li></ul></dd>
-	<dt class="tag-see">See:</dt>
-	<dd class="tag-see">
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>-1</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2024</li></ul></dd>
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
         <ul>
-            <li>http://code.google.com/apis/youtube/js_api_reference.html#getPlayerState</li>
+            <li>https://developers.google.com/youtube/js_api_reference#Playback_status</li>
         </ul>
-	</dd>
-</dl>
-</dd>
-<dt>
-    <h4 class="name" id="suggestedAutoplay"><span class="type-signature">&lt;static, readonly> </span>suggestedAutoplay<span class="type-signature"> :String</span></h4>
-</dt>
-<dd>
-    <div class="description">
-        What should player do when becomes ready to play video. This is
-suggestion from YouTube and it affects only videos on channels.
-It can be one of:
-'1' - autoplay is enabled
-'0' - autoplay is disabled
-    </div>
-<dl class="details">
-	<dt class="tag-default">Default Value:</dt>
-	<dd class="tag-default"><ul class="dummy"><li>'0'</li></ul></dd>
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4975</li></ul></dd>
+    </dd>
 </dl>
 </dd>
         </dl>
         <h3 class="subsection-title">Methods</h3>
         <dl>
 <dt>
-    <h4 class="name" id="adjustVideoQuality"><span class="type-signature">&lt;static> </span>adjustVideoQuality</h4>
+    <h4 class="name" id="adjustVideoQuality"><span class="type-signature">&lt;static> </span>adjustVideoQuality<span class="signature">(quality)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -132,28 +131,29 @@ first lower quality will be set.
         <tr>
                 <td class="name"><code>quality</code></td>
             <td class="type">
-                        String
+<span class="param-type">String</span>
             </td>
-            <td class="description last">Possible options for this argument are: <cite>small</cite>,
-<cite>medium</cite>, <cite>large</cite>, <cite>hd720</cite>,
-<cite>hd1080</cite>, <cite>highres</cite> or <cite>default</cite>.
+            <td class="description last">Possible options for this argument are: <cite>tiny</cite>,
+<cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,
+<cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>
+or <cite>default</cite>.
 Value <cite>default</cite> will be ignored.</td>
         </tr>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 4988</li></ul></dd>
-	<dt class="tag-see">See:</dt>
-	<dd class="tag-see">
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2038</li></ul></dd>
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
         <ul>
-            <li>http://code.google.com/apis/youtube/js_api_reference.html#setPlaybackQuality</li>
+            <li>https://developers.google.com/youtube/js_api_reference#Playback_quality</li>
         </ul>
-	</dd>
+    </dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="changeProgressColour"><span class="type-signature">&lt;static> </span>changeProgressColour</h4>
+    <h4 class="name" id="changeProgressColour"><span class="type-signature">&lt;static> </span>changeProgressColour<span class="signature">(<span class="optional">colour</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -174,7 +174,7 @@ Value <cite>default</cite> will be ignored.</td>
         <tr>
                 <td class="name"><code>colour</code></td>
             <td class="type">
-                        String
+<span class="param-type">String</span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -187,12 +187,12 @@ Value <cite>default</cite> will be ignored.</td>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5029</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2050</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="changeTheme"><span class="type-signature">&lt;static> </span>changeTheme</h4>
+    <h4 class="name" id="changeTheme"><span class="type-signature">&lt;static> </span>changeTheme<span class="signature">(<span class="optional">theme</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -213,7 +213,7 @@ Value <cite>default</cite> will be ignored.</td>
         <tr>
                 <td class="name"><code>theme</code></td>
             <td class="type">
-                        String
+<span class="param-type">String</span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -226,12 +226,12 @@ Value <cite>default</cite> will be ignored.</td>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5075</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2071</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="control"><span class="type-signature">&lt;static> </span>control</h4>
+    <h4 class="name" id="control"><span class="type-signature">&lt;static> </span>control<span class="signature">(command, <span class="optional">data</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -251,7 +251,7 @@ Value <cite>default</cite> will be ignored.</td>
         <tr>
                 <td class="name"><code>command</code></td>
             <td class="type">
-                        String
+<span class="param-type">String</span>
             </td>
                 <td class="attributes">
                 </td>
@@ -266,9 +266,9 @@ or change volume for value given by second argument.</td>
         <tr>
                 <td class="name"><code>data</code></td>
             <td class="type">
-                        String
-                         | 
-                        Number
+<span class="param-type">String</span>
+|
+<span class="param-type"><a href="Number.html">Number</a></span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -283,12 +283,12 @@ state.</td>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5139</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2110</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="enableWide"><span class="type-signature">&lt;static> </span>enableWide</h4>
+    <h4 class="name" id="enableWide"><span class="type-signature">&lt;static> </span>enableWide<span class="signature">(<span class="optional">wide</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -309,7 +309,7 @@ state.</td>
         <tr>
                 <td class="name"><code>wide</code></td>
             <td class="type">
-                        Boolean
+<span class="param-type">Boolean</span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -324,12 +324,12 @@ alternated (if it was wide it will become normal and vice versa).</td>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5208</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2180</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="frameStep"><span class="type-signature">&lt;static> </span>frameStep</h4>
+    <h4 class="name" id="frameStep"><span class="type-signature">&lt;static> </span>frameStep<span class="signature">()</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -338,12 +338,12 @@ using time-out, but since Opera 11.60 for HTML 5 videos it will
 accurately play one frame (it will advance video for 40ms).
     </div>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5252</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2230</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="hideAnnotations"><span class="type-signature">&lt;static> </span>hideAnnotations</h4>
+    <h4 class="name" id="hideAnnotations"><span class="type-signature">&lt;static> </span>hideAnnotations<span class="signature">(<span class="optional">hide</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -364,7 +364,7 @@ accurately play one frame (it will advance video for 40ms).
         <tr>
                 <td class="name"><code>hide</code></td>
             <td class="type">
-                        Boolean
+<span class="param-type">Boolean</span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -378,12 +378,12 @@ accurately play one frame (it will advance video for 40ms).
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5272</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2250</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="hideControls"><span class="type-signature">&lt;static> </span>hideControls</h4>
+    <h4 class="name" id="hideControls"><span class="type-signature">&lt;static> </span>hideControls<span class="signature">(<span class="optional">hide</span>)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -404,7 +404,7 @@ accurately play one frame (it will advance video for 40ms).
         <tr>
                 <td class="name"><code>hide</code></td>
             <td class="type">
-                        Number
+<span class="param-type"><a href="Number.html">Number</a></span>
             </td>
                 <td class="attributes">
                     &lt;optional><br>
@@ -423,20 +423,20 @@ accurately play one frame (it will advance video for 40ms).
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5347</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2289</li></ul></dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="isLoopForced"><span class="type-signature">&lt;static> </span>isLoopForced</h4>
+    <h4 class="name" id="isLoopForced"><span class="type-signature">&lt;static> </span>isLoopForced<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
 </dt>
 <dd>
     <div class="description">
         Test to see if loop is forced or loop section is enabled.
     </div>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5397</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2314</li></ul></dd>
 </dl>
     <h5>Returns:</h5>
 <div class="param-desc">
@@ -448,12 +448,12 @@ accurately play one frame (it will advance video for 40ms).
 		Type
 	</dt>
 	<dd>
-		<span class="param-type">Boolean</span> 
+<span class="param-type">Boolean</span>
 	</dd>
 </dl>
 </dd>
 <dt>
-    <h4 class="name" id="seekVideo"><span class="type-signature">&lt;static> </span>seekVideo</h4>
+    <h4 class="name" id="seekVideo"><span class="type-signature">&lt;static> </span>seekVideo<span class="signature">(forward)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
     <div class="description">
@@ -472,7 +472,7 @@ accurately play one frame (it will advance video for 40ms).
         <tr>
                 <td class="name"><code>forward</code></td>
             <td class="type">
-                        Boolean
+<span class="param-type">Boolean</span>
             </td>
             <td class="description last">Whether to seek forward (<code>true</code>)
 or backwards (<code>false</code>).</td>
@@ -480,20 +480,20 @@ or backwards (<code>false</code>).</td>
 	</tbody>
 </table>
 <dl class="details">
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source"><ul class="dummy"><li>xtt.js, line 5472</li></ul></dd>
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>xtt.js, line 2376</li></ul></dd>
 </dl>
 </dd>
         </dl>
 </article>
-</section>  
+</section>
 </div>
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Element.html">Element</a></li><li><a href="Node.html">Node</a></li><li><a href="xtt.ui.add.html">add</a></li><li><a href="xtt.ui.apply.html">apply</a></li><li><a href="xtt.ll.html">ll</a></li><li><a href="xtt.log.html">log</a></li><li><a href="xtt.player.loopSection.html">loopSection</a></li><li><a href="xtt.lyrics.html">lyrics</a></li><li><a href="xtt.player.html">player</a></li><li><a href="xtt.ui.remove.html">remove</a></li><li><a href="xtt.shortcut.html">shortcut</a></li><li><a href="xtt.ui.html">ui</a></li><li><a href="xtt.video.html">video</a></li><li><a href="xtt.html">xtt</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Element.html">Element</a></li><li><a href="Node.html">Node</a></li><li><a href="Number.html">Number</a></li><li><a href="xtt.html">xtt</a></li><li><a href="xtt.ll.html">ll</a></li><li><a href="xtt.log.html">log</a></li><li><a href="xtt.lyrics.html">lyrics</a></li><li><a href="xtt.player.html">player</a></li><li><a href="xtt.player.loopSection.html">loopSection</a></li><li><a href="xtt.shortcut.html">shortcut</a></li><li><a href="xtt.ui.html">ui</a></li><li><a href="xtt.ui.add.html">add</a></li><li><a href="xtt.ui.apply.html">apply</a></li><li><a href="xtt.ui.remove.html">remove</a></li><li><a href="xtt.video.html">video</a></li></ul>
 </nav>
 <br clear="both">
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Tue Sep 25 2012 23:36:10 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.1.1</a> on Mon Jul 01 2013 21:45:06 GMT-0300 (BRT)
 </footer>
 </body>
 </html>

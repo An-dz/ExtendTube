@@ -177,14 +177,14 @@
 							<label for="clear-confirmed">Reset</label> to
 							<button id="preferences-reset" class="delete text">default</button> preferences!
 							<span class="help">?</span>
-							<span>The “default” button will clear all preferences including shortcuts, custom style, colours and actions. When preferences are cleared ExtendTube will only clear ads.</span>
+							<span>The “default” button will clear all preferences including shortcuts, custom style, colours and actions. When preferences are cleared the only set options will be to block ads.</span>
 						</li>
 						<li class="help">
 							<input type="checkbox" id="load-confirmed">
 							<label for="load-confirmed">Load </label>
 							<button id="preferences-recommended" class="load text">recommended</button> preferences.
 							<span class="help">?</span>
-							<span>The “recommended” button will change recommended settings but other will be left unchanged.</span>
+							<span>The “recommended” button will define the recommended preferences but other preferences will be left unchanged.</span>
 						</li>
 						<li class="help">
 							<button id="preferences-export" class="save text">Export</button> preferences!
@@ -196,7 +196,7 @@
 							<label for="import-check-box">Import preferences</label>
 							<span class="help">?</span>
 							<span>Check this to be able to import preferences.</span>
-							<ul class="sub-group h12">
+							<ul class="sub-group">
 								<li class="high">
 									<textarea id="import-preferences" rows="5" cols="80">// Paste here previously exported preferences (or part of them)
 // and click “Import” button below.
@@ -230,7 +230,7 @@
 									<input type="checkbox" id="unapprovedcheck">
 									<label for="unapprovedcheck">Check for unapproved updates</label>
 									<span class="help">?</span>
-									<span>If you enable this option you will be notified when new version, which is not yet approved, is released.</span>
+									<span>If you enable this option you will be notified when new version, which is not yet approved by Opera catalogue, is released.</span>
 								</li>
 								<li>
 									<label for="updateinterval">Update interval:</label>
@@ -336,7 +336,7 @@
 									<input type="checkbox" id="disableautobuffering">
 									<label for="disableautobuffering">Disable auto buffering</label>
 									<span class="help note">?</span>
-									<span>Don’t load videos automatically.<br>
+									<span>Don’t download videos automatically.<br>
 									<span class="note">Note</span>: This option will be ignored on embedded videos.</span>
 								</li>
 							</ul>
@@ -377,6 +377,7 @@
 							<label for="videoquality">Force this video quality:</label>
 							<select id="videoquality">
 								<option value="default">Default</option>
+								<option value="tiny">144p</option>
 								<option value="small">240p</option>
 								<option value="medium">360p</option>
 								<option value="large">480p</option>
@@ -404,7 +405,7 @@
 									<input type="checkbox" id="onlyonfirstfocus">
 									<label for="onlyonfirstfocus">Only on first play</label>
 									<span class="help">?</span>
-									<span>This option will cause video to play when tab is focused only if video is not played before.</span>
+									<span>This option will cause video to play when tab is focused only if video was not played before.</span>
 								</li>
 								<li>
 									<input type="checkbox" id="forceplayonfocus">
@@ -432,7 +433,8 @@
 							</select>
 							<span class="help note">?</span>
 							<span>Auto-hide video controls and/or progress bar.<br>
-							<span class="note">Note</span>: Flash player will not respond to changes until page is reloaded. Please read help.</span>
+							<span class="note">Note</span>: Flash player will not respond to changes until page is reloaded. Please read help.<br>
+							<span class="note">Note 2</span>: "Show only progress" just works in embedded videos.</span>
 						</li>
 						<li class="help">
 							<label for="playertheme">Player theme:</label>
@@ -594,7 +596,7 @@
 								</li>
 								<li>
 									<input type="checkbox" id="lyricssearchlog">
-									<label for="lyricssearchlog">Don't close search log</label>
+									<label for="lyricssearchlog">Don’t close search log</label>
 									<span class="help">?</span>
 									<span>While searching for lyrics ExtendTube logs current progress on page. This option says if log should remain visible after successful search. On search failure log will remain visible regardless of this option.</span>
 								</li>
@@ -641,6 +643,14 @@
 							<label for="ratevideos">Show video ratings</label>
 							<span class="help">?</span>
 							<span>Show ratings over video thumbnails.</span>
+							<ul class="sub-group h1">
+								<li>
+									<input type="checkbox" id="rateout">
+									<label for="rateout">Ratings in description</label>
+									<span class="help">?</span>
+									<span>Show ratings inside the description over the title.</span>
+								</li>
+							</ul>
 						</li>
 						<li class="help">
 							<input type="checkbox" id="fullscreenstyle">
@@ -808,7 +818,7 @@
 							<label for="cleanwatch/langalert">Hide default language alert</label>
 							<span class="help note">?</span>
 							<span>Hide message that alerts you that YouTube has set default language for you.<br>
-							<span class="note">Note</span>: This option is practically useless for most users, but it's extremely useful for users who have disabled cookies.</span>
+							<span class="note">Note</span>: This option is practically useless for most users, but it’s extremely useful for users who have disabled cookies.</span>
 						</li>
 						<li class="help invert">
 							<input type="checkbox" id="cleanwatch/guide">
@@ -847,7 +857,7 @@
 									<label for="cleanwatch/viewcount">Hide view counter</label>
 									<span class="help note">?</span>
 									<span>Hide counter that shows how many times video is watched.<br>
-									<span class="note">Note</span>: Also, like/unlike bar and numbers will be hidden.</span>
+									<span class="note">Note</span>: Also, like/dislike bar and numbers will be hidden.</span>
 								</li>
 							</ul>
 						</li>
@@ -1013,14 +1023,14 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-pageBackgroundSecondary"><span>1</span>
 									Page background secondary
 									<span class="help">?</span>
-									<span>Secondary background colour. It's also used as background colour for most text input fields.</span>
+									<span>Secondary background colour. It’s also used as background colour for most text input fields.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/headerFooterBackground">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-headerFooterBackground"><span>1</span>
 									Header and footer background
 									<span class="help">?</span>
-									<span>Background colour of page header and footer. It's also used as background colour for some text areas.</span>
+									<span>Background colour of page header and footer. It’s also used as background colour for some text areas.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/pagePrimary">
@@ -1034,7 +1044,7 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-pageSecondary"><span>1</span>
 									Secondary text colour
 									<span class="help">?</span>
-									<span>Secondary text colour. It's used for text that resembles some kind of meta data (i.e. upload date, view count, uploader...).</span>
+									<span>Secondary text colour. It’s used for text that resembles some kind of meta data (i.e. upload date, view count, uploader...).</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/videoTitle">
@@ -1076,7 +1086,7 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-buttonBorder"><span>1</span>
 									Button border colour
 									<span class="help">?</span>
-									<span>Border colour for buttons on page. It's also used as border colour for most text input fields and text areas.</span>
+									<span>Border colour for buttons on page. It’s also used as border colour for most text input fields and text areas.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/buttonText">
@@ -1175,21 +1185,21 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-primaryButtonBackgroundHover"><span>1</span>
 									Primary button hover background colour
 									<span class="help">?</span>
-									<span>Background colour for primary buttons when they are hovered with mouse pointer. It's also used when button is focused and/or active/toggled.</span>
+									<span>Background colour for primary buttons when they are hovered with mouse pointer. It’s also used when button is focused and/or active/toggled.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/primaryButtonBorderHover">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-primaryButtonBorderHover"><span>1</span>
 									Primary button hover border colour
 									<span class="help">?</span>
-									<span>Border colour for primary buttons when they are hovered with mouse pointer. It's also used when button is focused and/or active/toggled.</span>
+									<span>Border colour for primary buttons when they are hovered with mouse pointer. It’s also used when button is focused and/or active/toggled.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/primaryButtonTextHover">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-primaryButtonTextHover"><span>1</span>
 									Primary button hover text colour
 									<span class="help">?</span>
-									<span>Text colour for primary buttons when they are hovered with mouse pointer. It's also used when button is focused and/or active/toggled.</span>
+									<span>Text colour for primary buttons when they are hovered with mouse pointer. It’s also used when button is focused and/or active/toggled.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/videoThumbnail">
@@ -1245,28 +1255,28 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-menuItemText"><span>1</span>
 									Menu item text colour
 									<span class="help">?</span>
-									<span>Text colour of menu items. It's also used in menu on the left side of the page.</span>
+									<span>Text colour of menu items. It’s also used in menu on the left side of the page.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/menuItemBackgroundHover">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-menuItemBackgroundHover"><span>1</span>
 									Menu item hover background colour
 									<span class="help">?</span>
-									<span>Background colour of menu items when they are hovered with mouse pointer. It's also used in menu on the left side of the page.</span>
+									<span>Background colour of menu items when they are hovered with mouse pointer. It’s also used in menu on the left side of the page.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/menuItemTextHover">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-menuItemTextHover"><span>1</span>
 									Menu item hover text colour
 									<span class="help">?</span>
-									<span>Colour used for text in menu items when they are hovered with mouse pointer. It's also used in menu on the left side of the page.</span>
+									<span>Colour used for text in menu items when they are hovered with mouse pointer. It’s also used in menu on the left side of the page.</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/clickCardBackground">
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-clickCardBackground"><span>1</span>
 									Click-card background colour
 									<span class="help note">?</span>
-									<span>Background colour of click-cards. It's also used in channel subscriber count tips (by subscribe button).<br>
+									<span>Background colour of click-cards. It’s also used in channel subscriber count tips (by subscribe button).<br>
 									<span class="note">Note</span>: Click-cards are pop-up like elements that appear and provide some information when you click some button (i.e. you need to log-in to perform such action - add to button, or help button in page footer).</span>
 								</li>
 								<li class="help">
@@ -1274,7 +1284,7 @@
 									<input type="range" min="0" max="1" step="0.05" value="1" id="alpha-clickCardBorder"><span>1</span>
 									Click-card border colour
 									<span class="help">?</span>
-									<span>Border colour of click-cards. It's also used in channel subscriber count tips (by subscribe button).</span>
+									<span>Border colour of click-cards. It’s also used in channel subscriber count tips (by subscribe button).</span>
 								</li>
 								<li class="help">
 									<input type="color" id="customcolor/toolTipBackground">
@@ -1311,7 +1321,7 @@
 							<label for="enablecustomstyle">Enable custom style</label>
 							<span class="help">?</span>
 							<span>If this option is set you can add custom CSS to page.</span>
-							<ul class="sub-group h11">
+							<ul class="sub-group">
 								<li class="high">
 									<textarea id="customstyle" rows="5" cols="80"></textarea>
 								</li>
@@ -1446,7 +1456,7 @@
 						Translations
 					</h3>
 					<p>
-						ExtendTube is translated to many languages using Google’s Translate service. Translations are far from good, so, consider contributing translation. If YouTube supports your language translate <a href="translation.source">this file</a> and send it back <a href="mailto:pdarko@myopera.com">to me</a>. Before you start translating check <a href="share/page/translations.html">existing translation</a>.<br>
+						ExtendTube is translated to many languages using Google Translator service. Translations are far from good, so, consider contributing with translations. If YouTube supports your language, translate <a href="translation.source">this file</a> and send it back <a href="mailto:pdarko@myopera.com">to me</a>. Before you start translating check <a href="share/page/translations.html">existing translation</a>.<br>
 						<span class="note">Note</span>: Only content that is added to YouTube page can be translated. This page cannot.
 					</p>
 					<p>
@@ -1840,7 +1850,7 @@
 					Help
 				</h2>
 				<p id="version-notice" class="right-text note">
-					This help is for version <span>1.15</span>.
+					This help is for version <span>1.18.6</span>.
 				</p>
 				<div class="collapsed">
 					<h3 id="help/interface" class="interface link">
@@ -1858,7 +1868,8 @@
 						<figcaption>Fig 2: Loop buttons</figcaption>
 					</figure>
 					<p>
-						First button is Loop button. It have two functions. First is controlling section loop and second is controlling loop globally (it will change loop option in preferences). To enable or disable section loop just click on this button. If you want to toggle loop globally hold <kbd>Ctrl</kbd> key down while clicking on it. The button will show what will happen when video riches end. Straight arrow means video will stop at end while circular arrow means it will loop. If icon is red that means that actual loop action is forced (this will happen if video is part of playlist or when section loop is enabled).<br>
+						First button is Loop button. It has two functions. First is controlling section loop and second is controlling loop globally (it will change loop option in preferences). To enable or disable section loop just click on this button. If you want to toggle loop globally hold<br>
+						<kbd>Ctrl</kbd> key down while clicking on it. The button will show what will happen when video riches end. Straight arrow means video will stop at end while circular arrow means it will loop. If icon is red that means that actual loop action is forced (this will happen if video is part of playlist or when section loop is enabled).<br>
 						<span class="note">Note</span>: Activation of loop and section loop was reversed prior to version 1.8.<br>
 						<span class="note">Note 2</span>: Since version 1.8.5 there are two new ways to toggle loop globally. First is <em>middle click</em>, and second <em>click ’n’ hold</em>.
 					</p>
@@ -2017,19 +2028,19 @@
 					<p>
 						There are also three extra buttons (figure 7). By default they are not visible and you need to enable them in preferences. These buttons allows you to seek video back or forward or to play video one frame at a time. When enabled they will be placed before loop button.
 					</p>
-					<figure class="wide">
-						<img src="share/image/lyrics.png" alt="Lyrics button"><br>
-						<figcaption>Fig 8: Lyrics button</figcaption>
-					</figure>
-					<p>
-						For some videos ExtendTube can load lyrics from an external source (lyrics.wikia.com). If lyrics are enabled ExtendTube will try to guess artist and title of the song from video title and it will show a button above video description. Clicking this button will initiate lyrics search and, if found, lyrics will be shown. If ExtendTube cannot find artist and title no button will appear. However, you can still initiate lyrics search via keyboard shortcut (if you defined one). If search fail you will be asked to enter artist and title of the song manually. Remember, lyrics are loaded from an external source and some may not exist on their servers.
-					</p>
 					<figure>
 						<img src="share/image/pop-out-button.png" alt="Pop out button"><br>
-						<figcaption>Fig 9: Pop out button</figcaption>
+						<figcaption>Fig 8: Pop out button</figcaption>
 					</figure>
 					<p>
-						New button since (version 1.8) is pop out button (figure 9). When you click on it player will be taken out of normal content flow and centred on <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a> with dark background around it.
+						Another button, which was introduced in version 1.8, is pop out button (figure 2). When you click on it, player will be taken out of normal content flow and centred on <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a> with dark background around it.
+					</p>
+					<figure class="wide">
+						<img src="share/image/lyrics.png" alt="Lyrics button"><br>
+						<figcaption>Fig 9: Lyrics button</figcaption>
+					</figure>
+					<p>
+						For some videos ExtendTube can load lyrics from an external source (lyrics.wikia.com). If lyrics are enabled ExtendTube will try to guess artist and title of the song from video title and it will show a button above video description (figure 9). Clicking this button will initiate lyrics search and, if found, lyrics will be shown. If ExtendTube cannot find artist and title no button will appear. However, you can still initiate lyrics search via keyboard shortcut (if you defined one) or you can force the button to show in all pages in preferences. If search fail you will be asked to enter artist and title of the song manually. Remember, lyrics are loaded from an external source and some may not exist on their servers.
 					</p>
 				</div>
 				<div class="collapsed">
@@ -2050,13 +2061,13 @@
 							Load recommended preferences.
 						</dt>
 						<dd>
-							When you click on <em>recommended</em> button recommended preferences will be loaded. This are the preferences that are set when extension is run for the first time. This action will change only those preferences that are in <em>recommended</em> group; other will remain unchanged.
+							When you click on <em>recommended</em> button recommended preferences will be loaded. These are the preferences that are set when extension is run for the first time. This action will change only those preferences that are in <em>recommended</em> group; other will remain unchanged.
 						</dd>
 						<dt>
 							Export preferences!
 						</dt>
 						<dd>
-							If you want to make backup of preferences click on <em>export</em> button. A new page will open with current preferences. Save that page so you can later import those preferences.
+							If you want to make a backup of actual preferences click on <em>export</em> button. A new page will open with current preferences. Save that page so you can later import those preferences.
 						</dd>
 						<dt>
 							Import preferences
@@ -2075,18 +2086,52 @@
 						<dd>
 							When this option is enabled ExtendTube will check for update every time it starts. That is on Opera start-up and when you manually disable and re-enable this extension.
 						</dd>
-						<dt>
-							Replace invalid characters
-						</dt>
-						<dd>
-							When you choose to save video, video title will be used as file name. Invalid characters in video title will be replaced whit this character(s). File name is then appended to download link and sent to YouTube as part of download request, so, YouTube may also remove or replace some characters.
-						</dd>
+						<dl>
+							<dt>
+								Check for unapproved updates
+							</dt>
+							<dd>
+								The standard behaviour is check for updates from Opera extension catalog, because Opera needs to review new updates sent to their extension catalogue sometimes the update may take some time to be available. This option will let extension check for unapproved updates, updates in ExtendTube repository.<br>
+							</dd>
+							<dt>
+								Update interval
+							</dt>
+							<dd>
+								This option will define the hour gap between update checks.
+							</dd>
+							<dt>
+								Allow auto update
+							</dt>
+							<dd>
+								This option will automatically download and install new updates. This only works for approved updates.
+							</dd>
+						</dl>
 						<dt>
 							Add toolbar button
 						</dt>
 						<dd>
-							Add button to toolbar that can be used to control playing video. This button will allow you to play or pause video when tab which plays video is not focused. It will also show how many videos (tabs) are currently opened. This number may not be correct if you go back/forward through tab history.
+							Add button to toolbar that can be used to control opened videos. This button will allow you to play or pause video when tab which plays video is not focused. It will also show how many videos (tabs) are currently opened. This number may not be correct if you go back/forward through tab history.
 						</dd>
+						<dl>
+							<dt>
+								Add pop-up to toolbar button
+							</dt>
+							<dd>
+								When you click over the button the default behaviour is play/pause the latest opened video, this option will open a pop-up dialogue with a list of opened videos.
+							</dd>
+							<dt>
+								Always add pop-up
+							</dt>
+							<dd>
+								This option will always make the toolbar button open the pop-up dialogue, even if there’s only one open video. This options will override the above preference.
+							</dd>
+							<dt>
+								Pop-up update interval
+							</dt>
+							<dd>
+								This option define the update interval the extension will check for the status of opened videos. This option helps you tune your performance.
+							</dd>
+						</dl>
 						<dt>
 							Log this type of messages
 						</dt>
@@ -2096,6 +2141,12 @@
 							<em>errors</em> - log just errors<br>
 							<em>warnings</em> - log errors and warnings<br>
 							<em>informations</em> - log errors, warnings and informations
+						</dd>
+						<dt>
+							Replace invalid characters
+						</dt>
+						<dd>
+							When you choose to save video, video title will be used as file name. Invalid characters in video title will be replaced with this character(s). File name is then appended to download link and sent to YouTube as part of download request, so, YouTube may also remove or replace some characters.
 						</dd>
 					</dl>
 					<h4>
@@ -2109,22 +2160,53 @@
 							Hide ads and video watermark inside flash player.
 						</dd>
 						<dt>
+							Let extension write player
+						</dt>
+						<dd>
+							Hide ads and video watermark inside flash player.
+						</dd>
+						<dt>
+							Prevent cross play
+						</dt>
+						<dd>
+							This will prevent cross play around opened videos making only one video play at a time. Once a video is played any other video that is already playing will pause. This option is also respected with <em>Play on focus</em> preferences.
+						</dd>
+						<dt>
 							Disable autoplay
 						</dt>
 						<dd>
-							This option have two effects but works only if there is another video playing in some other tab. If enabled it will prevent autoplay of videos opened in new tab. Also, it will allow only one video to play at a time. If, for example, there is video playing in another tab it will be stopped. If you want to disable autoplay even if it is the only opened video, set sub-option <em>Always disable autoplay</em>.
+							This will prevent videos from playing automatically at start, video will still buffer. <em>Play on focus</em> preference is respected.
 						</dd>
+						<dl>
+							<dt>
+								Disable auto buffering
+							</dt>
+							<dd>
+								Prevents the video from downloading, it will only start downloading once you click, just like embedded videos.
+							</dd>
+						</dl>
 						<dt>
 							Loop video
 						</dt>
 						<dd>
-							When this option is enabled video will play over and over again. However, this doesn’t work if video is part of a playlist because YouTube automatically advances to next video. If you want to prevent this behaviour you will have to enable sub-option named <em>Force loop</em>.
+							When this option is enabled video will play over and over again. However, this doesn’t work if video is part of a playlist because YouTube automatically advances to next video. If you want to prevent this behaviour you will have to enable sub-option.
 						</dd>
+						<dl>
+							<dt>
+								Force loop
+							</dt>
+							<dd>
+								Loop will also be enabled if video is part of a playlist, preventing YouTube automatically advancing to next video.
+							</dd>
+						</dl>
 						<dt>
 							Enable wide player
 						</dt>
 						<dd>
-							Enabling this option will make video player wider (expanded to 854x510 rather than default 640x390).
+							Enabling this option will make video player wider (expanded to 854x510 rather than default 640x390). Options are:<br>
+							<em>default</em> - Youtube will decide when to use wide player<br>
+							<em>medium</em> - standard wide size, as option on video player<br>
+							<em>large</em> - larger video player for big screens
 						</dd>
 						<dt>
 							Force video quality
@@ -2136,13 +2218,28 @@
 							Seek time
 						</dt>
 						<dd>
-							This is time used when seeking video back and forward using <em>extra buttons</em> or via keyboard shortcuts. The forward time will always be little more than this time, and back time will be little less. This is because JavaScript code that controls player takes time to execute. For example: if you set this time to 5 seconds forward jump may be 6 and back 4 seconds.
+							This is the time used when seeking video back and forward using <em>extra buttons</em> or via keyboard shortcuts. The forward time will always be little more than this time, and back time will be little less. This is because JavaScript code that controls player takes time to execute. For example: if you set this time to 5 seconds forward jump may be 6 and back 4 seconds.
 						</dd>
 						<dt>
 							Play on focus
 						</dt>
 						<dd>
-							If you want video to start playing when you focus tab enable this option. But, this option will be ignored if another video is already playing unless you enable sub-option <em>Force play on focus</em>. There is also sub-option <em>Only on first play</em> which will start playback only if playback is not started before.
+							If you want video to start playing when you focus tab enable this option. But, this option will be ignored if another video is already playing.
+						</dd>
+						<dl>
+							<dt>
+								Force play on focus
+							</dt>
+							<dd>
+								Video will always play on focus, no matter if another video is already playing. <em>Prevent cross play</em> is respected and is recommended with this preference.
+							</dd>
+							<dt>
+								Only on first play
+							</dt>
+							<dd>
+								Video will only play on focus if playback is not started before.
+							</dd>
+						</dl>
 						</dd>
 						<dt>
 							Hide annotations
@@ -2181,33 +2278,49 @@
 							Hide ads on page
 						</dt>
 						<dd>
-							Hide ads on YouTube pages.
+							Hide ads on YouTube pages. Not on videos.
 						</dd>
 						<dt>
 							Don’t detect language
 						</dt>
 						<dd>
-							By default ExtendTube will detect language that YouTube currently uses, and will use the same language for content that adds to page. If you enable this option, ExtendTube will always use language that you can choose upon enabling this option.<br>
+							By default ExtendTube will detect language that YouTube currently uses and will use the same language for content that adds to page. If you enable this option, ExtendTube will always use language that you can choose upon enabling this option.<br>
 							<span class="note">Note</span>: This option will change language only for content added by this extension not the whole page.
 						</dd>
 						<dt>
 							Enable download
 						</dt>
 						<dd>
-							This option will add button that, when activated, will show menu with download options for playing video. When this option is enabled a new option will be available. Named <em>Use fallback servers</em> this new option will allow you to use alternate servers for download links.
+							This option will add button that, when activated, will show menu with download options for playing video. When this option is enabled a new option will be available.
 						</dd>
+						<dl>
+							<dt>
+								Use fallback servers
+							</dt>
+							<dd>
+								This option allow you to use alternate servers for download links.
+							</dd>
+						</dl>
 						<dt>
 							Add loop button
 						</dt>
 						<dd>
-							This option will add button that can be used to enable or disable <em>Loop video</em> option.
+							This option will add button that can be used to enable or disable <em>Loop video</em> option. This option let you define the start and end positions of the video to loop.
 						</dd>
 						<dt>
 							Add pop out player button
 						</dt>
 						<dd>
-							Adds button that can be used to pop player out of page and centre it on the <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a>. When it’s enabled you can choose whether you want player to be resized to display real video size. If you choose for player to be resized it will be expanded or shrunk to size of video or viewport size if video is greater than viewport. Otherwise, player size will be 854x510 pixels.
+							Adds button that can be used to pop player out of page and centre it on the <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a>.
 						</dd>
+						<dl>
+							<dt>
+								Resize player on pop out
+							</dt>
+							<dd>
+								When it’s enabled you can choose whether you want player to be resized to display real video size. If you choose for player to be resized it will be expanded or shrunk to size of video or viewport size if video is greater than viewport. Otherwise, player size will be 854x510 pixels.
+							</dd>
+						</dl>
 						<dt>
 							Add extra buttons
 						</dt>
@@ -2220,6 +2333,26 @@
 						<dd>
 							When enabled you will have a button below player which will, when clicked, load and show lyrics for current video.
 						</dd>
+						<dl>
+							<dt>
+								Always show lyrics button
+							</dt>
+							<dd>
+								This option will always include the lyric search button. Without it, when you open a video page, ExtendTube will do a search with the video title. If it doesn’t find the song title and artist button is not included in page.
+							</dd>
+							<dt>
+								Don’t close search log
+							</dt>
+							<dd>
+								A log is written to the page to let you know the progress of the lyric search, once it loads the lyric this log is closed. This option will prevent closing it. If no lyrics are found the log won’t be closed regardless this option.
+							</dd>
+							<dt>
+								Scroll page on lyrics show/hide
+							</dt>
+							<dd>
+								This option will scroll the page to the lyric search once you click on the lyrics button.
+							</dd>
+						</dl>
 						<dt>
 							Add preferences button
 						</dt>
@@ -2234,8 +2367,22 @@
 								<img src="share/image/thumb-preview.png" alt="Preview button"><br>
 								<figcaption>Fig 10: Preview button</figcaption>
 							</figure>
-							If this option is enabled video thumbnails will be converted to playable videos. After you enable this option you can choose what should trigger video preview. If you choose <em>click on a button</em> a new button will be added to thumbnail <em>add to</em> menu (figure 10). If you choose <em>mouse hover</em> you’ll need to hover thumbnail to enable preview.
+							If this option is enabled video thumbnails will be converted to playable videos. After you enable this option you can choose what should trigger video preview.
 						</dd>
+						<dl>
+							<dt>
+								Preview trigger
+							</dt>
+							<dd>
+								If you choose <em>click on a button</em> a new button will be added to thumbnail <em>add to</em> menu (figure 10). If you choose <em>mouse hover</em> you’ll only need to hover thumbnail to enable and start preview.
+							</dd>
+							<dt>
+								Preview add delay
+							</dt>
+							<dd>
+								This preference only work if <em>preview trigger</em> is set as <em>mouse hover</em>. This option will control how long you need to keep the mouse over the thumb to start preview. After preview is loaded, once you hover thumb again to continue the playback the default time of 300ms is used.
+							</dd>
+						</dl>
 						<dt>
 							Show video ratings
 						</dt>
@@ -2246,12 +2393,20 @@
 							</figure>
 							If this option is enabled at top of video thumbnails a bar, showing video rating, will be inserted (see figure 11).
 						</dd>
+						<dl>
+							<dt>
+								Ratings in description
+							</dt>
+							<dd>
+								This option will make the rating bar be included in the description box rather than inside the thumbnail.
+							</dd>
+						</dl>
 						<dt>
 							Only player in full screen
 						</dt>
 						<dd>
 							When this option is enabled only video player will be visible when Opera goes full screen (<kbd>F11</kbd>). Video player will stretch to cover entire screen. This feature will allow you to watch HTML 5 videos in full screen but it has a bad side on flash videos.<br>
-							<span class="note">Note</span>: If you click on flash video while in full screen, flash will steal keyboard focus from Opera and you wont be able to come back from full screen. For that very reason ExtendTube will add one pixel bluish line at top of the screen on which you can click to take keyboard focus back from flash.
+							<span class="note">Note</span>: If you click on flash video while in full screen, flash will steal keyboard focus from Opera and you wont be able to come back from full screen. For that very reason ExtendTube will add one pixel bluish line at the top of the screen on which you can click to take keyboard focus back from flash.
 						</dd>
 					</dl>
 					<h4>
@@ -2321,7 +2476,7 @@
 							Enable custom style
 						</dt>
 						<dd>
-							When enabled custom CSS will be added to YouTube page but you need to enter it in text area below this option. Please note that ExtendTube does not check CSS syntax, so, be sure it’s correct. Also, some of vendor specific properties will be removed (-moz-, -ms-, -webkit-, zoom and filter), so, please check it after saving style.
+							When enabled, custom CSS will be added to YouTube page but you need to enter it in text area below this option. Please note that ExtendTube does not check CSS syntax, so, be sure it’s correct. Also, some of vendor specific properties will be removed (-moz-, -ms-, -webkit-, zoom and filter), so, please check it after saving style.
 						</dd>
 					</dl>
 				</div>
@@ -2335,14 +2490,15 @@
 						</dt>
 						<dd>
 							Set this option to enable keyboard shortcuts.<br>YouTube flash player have some keyboard shortcuts predefined, but they work only if player is focused. If you enable <em>Expose player shortcuts</em> sub-option this extension will try to make them work even when player is not focused.<br>
-							<span class="note">Note</span>: If some action (ex. play/pause) is executed twice when you interact (click) with flash player and player shortcuts are exposed to page please enable <em>Disable flash player shortcuts</em> sub-option.
+							<span class="note">Note</span>: If some action (ex. play/pause) is executed twice when you interact (click) with flash player and player shortcuts are exposed to page please enable <em>“Disable flash player shortcuts”</em> sub-option.
 						</dd>
 					</dl>
 					<p>
-						When defining shortcuts it is recommended, but not absolutely necessary, to use modifier keys<sup><a href="http://en.wikipedia.org/wiki/Modifier_key">(?)</a></sup>. Note that some key combination are reserved by system and should be avoided (like <kbd>Alt</kbd>+<kbd>F4</kbd> or <kbd>Alt</kbd>+<kbd>f</kbd>). Also, when some elements on page are focused (like search field or a button) some keyboard shortcuts may not work.
+						When defining shortcuts it is recommended, but not absolutely necessary, to use modifier keys<sup><a href="http://en.wikipedia.org/wiki/Modifier_key">(?)</a></sup>. Note that some key combination are reserved by system and should be avoided (like <kbd>Alt</kbd>+<kbd>F4</kbd> or<br>
+						<kbd>Alt</kbd>+<kbd>f</kbd>). Also, when some elements on page are focused (like search field or a button) some keyboard shortcuts may not work.
 					</p>
 					<p>
-						If you enabled “expose player shortcuts” option you will also have this shortcuts available. They cannot be redefined but they will be executed only if no other action is defined for shortcut.
+						If you enabled <em>“expose player shortcuts”</em> option you will have the following shortcuts available. They cannot be redefined but they will be executed only if no other action is defined for shortcut.
 					</p>
 					<ul>
 						<li>
@@ -2390,7 +2546,7 @@
 	<span class="comment">// action code goes here</span>
 <span class="operator">})(</span>window<span class="operator">.</span>opera<span class="operator">.</span>xtt<span class="operator">);</span></pre>
 					<p>
-						So, everything that is created in action will be destroyed after action is executed. If you want something to be available after action is done executing make it property of some globally accessible object.
+						So, everything that is created by an action will be destroyed after action is executed. If you want something to be available after action is done executing, make it property of some globally accessible object.
 					</p>
 <pre class="code"><span class="word">var</span> run_counter <span class="operator">=</span> <span class="number">0</span><span class="operator">;</span>
 <span class="word">if</span> <span class="operator">(</span>window<span class="operator">.</span>run_counter <span class="operator">!==</span> <span class="word">undefined</span><span class="operator">)</span>
@@ -2400,10 +2556,10 @@ run_counter<span class="operator">++;</span>
 console<span class="operator">.</span>log<span class="operator">(</span><span class="string">"This action is run "</span> <span class="operator">+</span> run_counter <span class="operator">+</span> <span class="string">" times."</span><span class="operator">);</span>
 window<span class="operator">.</span>run_counter <span class="operator">=</span> run_counter<span class="operator">;</span></pre>
 					<h4>
-						Adding new action
+						Adding a new action
 					</h4>
 					<p>
-						When adding new action you need to define three things. First you need to define unique action ID. Second, you need to define when action should be executed and last, you need to enter action code. Then just click <em>Save action</em> button.
+						When adding a new action you need to define three things. First you need to define unique action ID. Second, you need to define when action should be executed and last, you need to enter action code. Then just click <em>Save action</em> button.
 					</p>
 					<p>
 						Actions are executed when some event is triggered. If some event is fired before actions are sent by background process, actions defined for that event will be executed immediately after they are received. Events that can trigger an action are:
@@ -2444,7 +2600,7 @@ window<span class="operator">.</span>run_counter <span class="operator">=</span>
 							player ready
 						</dt>
 						<dd>
-							This event will be triggered twice. First time when video player becomes ready to play video. At the same time background process will be signalled about player being ready. When background process returns message, event will be triggered second time.<br>
+							This event will be triggered twice. First time when video player becomes ready to play video, at the same time background process will be signaled about player being ready. And second time when background process returns message.<br>
 							<span class="note">Note</span>: This event may be fired several times (if flash player is replaced for some reason).
 						</dd>
 						<dt>
@@ -2469,14 +2625,14 @@ window<span class="operator">.</span>run_counter <span class="operator">=</span>
 							develop
 						</dt>
 						<dd>
-							This is special event. Actions with this event will be executed every time preferences are received from background process which is every time you save an action.
+							This is a special event. Actions with this event will be executed every time preferences are received from background process which is every time you save an action.
 						</dd>
 					</dl>
 					<p>
 						As you may guess some events will fire only if page contains a video.
 					</p>
 					<p>
-						If you are writing new action it is recommended to use “develop” event. First open a YouTube page, then write action, click <em>Save action</em> button and watch Error Console (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>) for errors. I there are errors fix them and click <em>Save again</em> and action will be executed. There is no need to reload YouTube page. If everything went without errors, choose different event trigger and you are done.
+						If you are writing a new action it is recommended to use “develop” event. First open a YouTube page, then write action, click <em>Save action</em> button and watch Error Console (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>) for errors. If there are errors, fix them and click <em>Save again</em> and action will be executed once again. There is no need to reload YouTube page. If everything went without errors, choose different event trigger and you are done.
 					</p>
 					<p>
 						While writing action code you may call some methods of extension object. ExtendTube object is property of <a href="http://www.howtocreate.co.uk/operaStuff/operaObject.html">Opera object</a>. See <a href="api/xtt.html">API</a> for details.
@@ -2519,13 +2675,24 @@ xtt<span class="operator">.</span>ui<span class="operator">.</span>add<span clas
 						Extension pop-up
 					</h3>
 					<p>
-						Depending on your settings, when you click on extensions button a pop-up may appear. In this pop-up you’ll see list of all opened videos. Every list entry have video title, current video progress and playback control button.
+						Depending on your settings, when you click on extensions button a pop-up may appear. In this pop-up you’ll see a list of all opened videos. Every list entry include the video title, current video progress and playback control button.
 					</p>
 					<p>
-						For embedded videos, click on video title will open video in new regular YouTube page. If video is on regular YouTube page, tab will be focused. In order for tab focus to work you have to enable <em><a href="opera:config#Allow%20script%20to%20raise%20window">Allow raising of windows</a></em> option in <em>Preferences/Advanced/Content/JavaScript Options...</em> . In front of video title an icon may appear showing some info about video (<img class="small" src="share/image/html5.png" alt="HTML 5 icon."> - video is HTML5 video; <img class="small" src="share/image/iframe.png" alt="Frame icon."> - video is iframe embedded video).
+						For embedded videos, clicking on video title will open video in a new regular YouTube page. If video is on a regular YouTube page, tab will be focused. In order for tab focus to work you have to enable <em><a href="opera:config#Allow%20script%20to%20raise%20window">Allow raising of windows</a></em> option in <em>Preferences/Advanced/Content/JavaScript Options...</em> .
 					</p>
 					<p>
-						Progress bar will show current video progress and it will allow you to seek video. In some versions of Opera it will change colour depending of whether playback is paused (yellow) or playing (green).
+						In front of video title an icon may appear showing some info about video:
+					</p>
+					<ul>
+						<li>
+							<img class="small" src="share/image/html5.png" alt="HTML 5 icon."> - video is a HTML5 video;
+						</li>
+						<li>
+							<img class="small" src="share/image/iframe.png" alt="Frame icon."> - video is an iframe embedded video.
+						</li>
+					</ul>
+					<p>
+						Progress bar will show current video progress and it will allow you to seek the video. In some versions of Opera it will change colour depending of whether playback is paused (yellow) or playing (green).
 					</p>
 					<p>
 						Control button will show current playback state (<img class="small" src="share/image/paused.png" alt="Play icon - playback is paused."> - paused; <img class="small" src="share/image/playing.png" alt="Pause icon - playback is playing."> - playing) and it will allow you to change that state by clicking on it.

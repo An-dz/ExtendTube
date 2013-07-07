@@ -4,8 +4,19 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+01.07.2013 - 1.19
+	+ 144p for default video size
+	+ ratings outside thumbnail preference
+	# updated help section
+	# new rating bar style
+	# rating bar visible in watched videos
+	# updated translation (pt_br)
+	# re-sizable custom CSS and actions code box in options page
+	# unapproved updates now checked from An_dz's blog
+	# updated (regenerated) API documentation
+
 27.06.2013 - 1.18.6
-	+ Hide left guide options
+	+ hide left guide options
 	* API not being injected
 
 24.06.2013 - 1.18.5
