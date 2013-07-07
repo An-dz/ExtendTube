@@ -4,6 +4,9 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+27.06.2013 - 1.18.6
+	+ Hide left guide options
+	* API not being injected
 
 24.06.2013 - 1.18.5
 	* API not being injected

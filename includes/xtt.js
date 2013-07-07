@@ -1618,8 +1618,8 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(a\.removeEventListener,a\)\);for\(var c=0)/,
-						"$1,sEx=(" + apiSetter.toString() + ")(this)")
+	return text.replace(/(b=a\.getApiInterface\(\);.*;for\(var )/,
+						"$1sEx=(" + apiSetter.toString() + ")(this),")
 }
 
 function injectForceLoopCheck(text) {
@@ -3360,8 +3360,7 @@ function makeApi() {
 		 * (<code>true</code>) or to move it back into flow (<code>false</code>).
 		 */
 		popoutPlayer: function applyPopoutPlayer(popout) {
-			var watch = document.querySelector("#watch7-video, #watch-video, #watch7-player,"
-											  + " #watch-player, .channels-video-player, #player")
+			var watch = document.querySelector("#player") //#watch7-video, #watch-video, #watch7-player, #watch-player, .channels-video-player
 			if (!watch)
 				return
 
