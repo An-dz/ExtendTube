@@ -4,6 +4,18 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+
+24.06.2013 - 1.18.5
+	* API not being injected
+	* loop video not working
+	* autoplay settings not working
+	* prevent cross play settings not working
+	* inject API without "let extension write player"
+	* option to hide "add to" button
+	* option to hide only standard comments
+
+-v-v-v- Darko Pantić -v-v-v-
+
 12.05.2013. - 1.18.4
 	* player is not written to page
 

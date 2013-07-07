@@ -706,7 +706,7 @@ function beforeScript(event) {
 		event.element.text = injectApiSetter(event.element.text)
 
 	if (/www(-|_)channel/.test(src))
-		xtt.video.isChannel = true
+		xtt.video.isChannel = true /*TODO*/
 	else if (/www_base_mod/.test(src) || /www-watch7?-extra/.test(src))
 		event.element.text = injectForceLoopCheck(event.element.text)
 	// Iframe embedded videos.
@@ -1618,8 +1618,8 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(\bc=b\.getApiInterface\(\)(,|;))/,
-						"$1sEx=(" + apiSetter.toString() + ")(a)$2")
+	return text.replace(/(a\.removeEventListener,a\)\);for\(var c=0)/,
+						"$1,sEx=(" + apiSetter.toString() + ")(this)")
 }
 
 function injectForceLoopCheck(text) {
@@ -2431,7 +2431,7 @@ function makeApi() {
 		 * @private
 		 */
 		writePlayer: function () {
-			var player = document.querySelector("#player-api, #watch-player, #watch7-player")
+			var player = document.querySelector("#movie_player") /*#player-api, #watch-player, #watch7-player TODO*/
 			if (player && player.querySelector("[id*=\"player-unavailable\"]"))
 				return
 
