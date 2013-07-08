@@ -1,5 +1,5 @@
 // Save this file to disk, open with your favourite text editor and translate
-// quoted text to your language. Then send file back to me (pdarko@myopera.com).
+// quoted text to your language. Then send file back to me (an-dz@myopera.com).
 
 // Do not translate strings beginning with % (percent).
 // \ (backslash) is escape character.
@@ -23,6 +23,8 @@ STEP_FRAME_FORWARD:         "Step one frame forward",
 SEEK_FORWARD:               "Seek forward",
 // Tool-tip for seek back button.
 SEEK_BACK:                  "Seek back",
+// Tooltip for stop video playback and buffering
+STOP_PLAYER:				"Stop video buffering",
 // Tool-tip for pop out player button. This button will take video from normal
 // page flow and dim background so it looks like it’s popped out of page.
 // (can be translated as “focus video” or “show video only”)

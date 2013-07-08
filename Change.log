@@ -4,6 +4,12 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+08.07.2013 - 1.19.1
+	+ stop button and shortcut (by Static)
+	+ मराठी (Marathi (Marāṭhī)) translation (Google Translator)
+	+ తెలుగు (Telugu) translation (Google Translator)
+	# updated (regenerated) API documentation
+
 01.07.2013 - 1.19
 	+ 144p for default video size
 	+ ratings outside thumbnail preference

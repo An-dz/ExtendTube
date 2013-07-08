@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns="http://www.w3.org/ns/widgets" version="1.19" id="https://addons.opera.com/extensions/details/extendtube/" href="https://addons.opera.com/extensions/details/extendtube/">
+<widget xmlns="http://www.w3.org/ns/widgets" version="1.19.1" id="https://addons.opera.com/extensions/details/extendtube/" href="https://addons.opera.com/extensions/details/extendtube/">
   <name short="xtt">ExtendTube</name>
   <icon src="share/image/icon.png"/>
-  <author href="http://my.opera.com/pdarko" email="pdarko@myopera.com">
-		Darko Pantić
+  <author href="http://my.opera.com/An-dz" email="an-dz@myopera.com">
+		Darko Pantić &amp; André Zanghelini
 	</author>
   <access origin="http://lyrics.wikia.com"/>
   <access origin="https://files.myopera.com"/>

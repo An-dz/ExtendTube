@@ -220,12 +220,12 @@ var /**
 	 * Used when temporary changing page clean-up. Says what is current state of
 	 * page clean-up.
 	 *
-	 * @type Number
 	 * Can be:
 	 * -1 = assume every option in preferences is disabled,
 	 * 0 = read from preferences, or
 	 * 1 = assume every option in preferences is enabled
 	 *
+	 * @type Number
 	 * @default 0
 	 */
 	hidden = 0,
@@ -345,7 +345,8 @@ var /**
 		popoutButton: null,
 		preferencesButton: null,
 		seekBackButton: null,
-		seekForwardButton: null
+		seekForwardButton: null,
+		stopButton: null
 	},
 	/**
 	 * Current status during lyrics search. Value can be:
@@ -2704,6 +2705,8 @@ function makeApi() {
 			// Insert created nodes to document.
 			if (references.preferencesButton && references.preferencesButton.parentNode == node)
 				references.preferencesButton.insertAdjacentElement("beforebegin", button)
+			else if(references.stopButton && references.stopButton.parentNode == node)
+				references.stopButton.insertAdjacentElement("afterend", buttoncnt)
 			else
 				node.appendChild(button)
 
@@ -3084,6 +3087,38 @@ function makeApi() {
 			// Remember reference to created button.
 			references.preferencesButton = button
 			return button
+		},
+		/**
+		 * Adds button to page that will stop video playback and buffering.
+		 *
+		 * @param {HTMLElement} node
+		 * Parent element for new buttons container.
+		 *
+		 * @returns {HTMLButtonElement}
+		 * Reference to created button or <code>null</code> if <cite>node</cite>
+		 * parameter is missing.
+		 */
+		stopButton: function addStopButton(node) {
+			if(references.stopButton || !node)
+				return references.stopButton
+
+			var stopbtn = createButton({
+					"class": getButtonClass() + " yt-uix-button-text",
+					"id": "ext-stop-button",
+					"data-tooltip-text": xtt.ll.getString("STOP_PLAYER")
+				})
+
+			stopbtn.addEventListener("click", stopDownload, false)
+
+			if(references.popoutButton && references.popoutButton.parentNode == node)
+				references.popoutButton.insertAdjacentElement("afterend", stopbtn)
+			else
+				node.insertAdjacentElement("afterbegin", stopbtn)
+
+			log.info('Added stop button to page.')
+
+			references.stopButton = stopbtn
+			return stopbtn
 		},
 		/**
 		 * Add interface to preview video thumbnails.
@@ -3672,7 +3707,18 @@ function makeApi() {
 			Array.prototype.forEach.call(document.querySelectorAll(".ext-video-rating"), removeElement)
 
 			log.info('Ratings are removed from video thumbnails.')
-		}
+		},
+		/**
+		 * Remove button added by {@link xtt.ui.add.stopButton}.
+		 */
+		stopButton: function removeStopButton() {
+			if (references.stopButton) {
+				removeElement(references.stopButton)
+				references.stopButton = null
+
+				log.info('Stop button is removed from page.')
+			}
+		},
 	}
 
 	/**
@@ -4419,6 +4465,8 @@ function modifyDocument(skipLanguage) {
 		xtt.ui.add.extraButtons(buttons)
 	if (preferences.enablepopout)
 		xtt.ui.add.popoutButton(buttons)
+	if (preferences.stopbutton)
+		xtt.ui.add.stopButton(buttons)
 	// Add lyrics container.
 	if (preferences.lyrics)
 		xtt.ui.add.lyricsContainer("beforeend",
@@ -4684,6 +4732,12 @@ function preferenceChanged(data) {
 				xtt.ui.add.popoutButton(document.querySelector(".ext-actions-right"))
 			else
 				xtt.ui.remove.popoutButton()
+			break
+		case "stopbutton":
+			if (data.data[data.key])
+				xtt.ui.add.stopButton(document.querySelector(".ext-actions-right"))
+			else
+				xtt.ui.remove.stopButton()
 			break
 		case "lyrics":
 			if (data.data[data.key])
@@ -5180,6 +5234,12 @@ function shortcutAction(event) {
 			else
 				preventDefaultAction = false
 			break
+		case preferences.shortcut.stopbuffer:
+			if (xtt.player.playerElement)
+				xtt.player.control("stop")
+			else
+				preventDefaultAction = false
+			break
 		case preferences.shortcut.playpause:
 			if (xtt.player.playerElement)
 				xtt.player.control("play/pause")
@@ -5408,6 +5468,17 @@ function startSendingStatus() {
 		statusInterval = setInterval(sendStatusToParent, 1000)
 
 	sendStatusToParent(true)
+}
+
+/**
+ * Event listener for <cite>click</click> event on <em>stop</em> button.
+ * Send control event to stop player
+ *
+ * @param {MouseEvent} event
+ * Event object.
+ */
+function stopDownload() {
+	xtt.player.control("stop")
 }
 
 /**

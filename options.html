@@ -557,6 +557,12 @@
 							</ul>
 						</li>
 						<li class="help">
+							<input type="checkbox" id="stopbutton">
+							<label for="stopbutton">Add stop button</label>
+							<span class="help">?</span>
+							<span>Add button that stops playback and video buffering.</span>
+						</li>
+						<li class="help">
 							<input type="checkbox" id="loopbutton">
 							<label for="loopbutton">Add loop button</label>
 							<span class="help">?</span>
@@ -715,6 +721,13 @@
 								<li>
 									<span>Play/Pause</span>
 									<span id="playpause"><em>(not available)</em></span>
+									<span class="right">
+										<button class="delete">Clear</button><button class="load">Change...</button>
+									</span>
+								</li>
+								<li>
+									<span>Stop buffering</span>
+									<span id="stopbuffer"><em>(not available)</em></span>
 									<span class="right">
 										<button class="delete">Clear</button><button class="load">Change...</button>
 									</span>
@@ -1313,7 +1326,7 @@
 						Here you can enter custom CSS that will be added to page. ExtendTube will not check CSS grammar, but some of vendor specific properties will be removed (-moz-, -ms-, -webkit-, zoom and filter), so, please be sure everything is OK after saving.
 					</p>
 					<p class="appeal-note">
-						If you have some interesting style that you wish to share with others you can <a href="mailto:pdarko@myopera.com">send it to me</a> or post as comment on <a href="http://my.opera.com/pdarko">support page</a> and I will publish it.
+						If you have some interesting style that you wish to share with others you can <a href="mailto:an-dz@myopera.com">send it to me</a> or post as comment on <a href="http://my.opera.com/An-dz">support page</a> and I will publish it.
 					</p>
 					<ul>
 						<li class="help">
@@ -1341,7 +1354,7 @@
 						To be able to edit an action you need to enable it first. Depending on when an action is added or edited you may meed to reload opened pages for it to be executed.
 					</p>
 					<p class="appeal-note">
-						If you have some interesting actions that you wish to share with others you can <a href="mailto:pdarko@myopera.com">send them to me</a> or post as comment on <a href="http://my.opera.com/pdarko">support page</a> and I will publish it.
+						If you have some interesting actions that you wish to share with others you can <a href="mailto:an-dz@myopera.com">send them to me</a> or post as comment on <a href="http://my.opera.com/An-dz">support page</a> and I will publish it.
 					</p>
 					<ul id="actions">
 						<li>
@@ -1359,7 +1372,7 @@
 						Extension
 					</h3>
 					<p>
-						<strong><a href="README">README</a></strong>
+						<strong><a href="README.md">README</a></strong>
 					</p>
 					<dl>
 						<dt>
@@ -1850,7 +1863,7 @@
 					Help
 				</h2>
 				<p id="version-notice" class="right-text note">
-					This help is for version <span>1.18.6</span>.
+					This help is for version <span>1.19.1</span>.
 				</p>
 				<div class="collapsed">
 					<h3 id="help/interface" class="interface link">
@@ -2033,14 +2046,21 @@
 						<figcaption>Fig 8: Pop out button</figcaption>
 					</figure>
 					<p>
-						Another button, which was introduced in version 1.8, is pop out button (figure 2). When you click on it, player will be taken out of normal content flow and centred on <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a> with dark background around it.
+						Another button, which was introduced in version 1.8, is pop out button (figure 8). When you click on it, player will be taken out of normal content flow and centred on <a href="http://www.w3.org/TR/CSS2/visuren.html#viewport" title="A window or other viewing area on the screen">viewport</a> with dark background around it.
+					</p>
+					<figure>
+						<img src="share/image/stop-button.png" alt="Stop button"><br>
+						<figcaption>Fig 9: Stop button</figcaption>
+					</figure>
+					<p>
+						In version 1.19.1 stop button was introduced (figure 9). When you click on it, the video will stop playing, if it's playing, and will stop buffering.
 					</p>
 					<figure class="wide">
 						<img src="share/image/lyrics.png" alt="Lyrics button"><br>
-						<figcaption>Fig 9: Lyrics button</figcaption>
+						<figcaption>Fig 10: Lyrics button</figcaption>
 					</figure>
 					<p>
-						For some videos ExtendTube can load lyrics from an external source (lyrics.wikia.com). If lyrics are enabled ExtendTube will try to guess artist and title of the song from video title and it will show a button above video description (figure 9). Clicking this button will initiate lyrics search and, if found, lyrics will be shown. If ExtendTube cannot find artist and title no button will appear. However, you can still initiate lyrics search via keyboard shortcut (if you defined one) or you can force the button to show in all pages in preferences. If search fail you will be asked to enter artist and title of the song manually. Remember, lyrics are loaded from an external source and some may not exist on their servers.
+						For some videos ExtendTube can load lyrics from an external source (lyrics.wikia.com). If lyrics are enabled ExtendTube will try to guess artist and title of the song from video title and it will show a button above video description (figure 10). Clicking this button will initiate lyrics search and, if found, lyrics will be shown. If ExtendTube cannot find artist and title no button will appear. However, you can still initiate lyrics search via keyboard shortcut (if you defined one) or you can force the button to show in all pages in preferences. If search fail you will be asked to enter artist and title of the song manually. Remember, lyrics are loaded from an external source and some may not exist on their servers.
 					</p>
 				</div>
 				<div class="collapsed">
@@ -2302,6 +2322,12 @@
 							</dd>
 						</dl>
 						<dt>
+							Add stop button
+						</dt>
+						<dd>
+							This option will add button that can be used to <em>stop video playback and buffering</em>. This button helps everybody that miss the right-click <em>Stop download</em> option.
+						</dd>
+						<dt>
 							Add loop button
 						</dt>
 						<dd>
@@ -2365,7 +2391,7 @@
 						<dd>
 							<figure>
 								<img src="share/image/thumb-preview.png" alt="Preview button"><br>
-								<figcaption>Fig 10: Preview button</figcaption>
+								<figcaption>Fig 13: Preview button</figcaption>
 							</figure>
 							If this option is enabled video thumbnails will be converted to playable videos. After you enable this option you can choose what should trigger video preview.
 						</dd>
@@ -2374,7 +2400,7 @@
 								Preview trigger
 							</dt>
 							<dd>
-								If you choose <em>click on a button</em> a new button will be added to thumbnail <em>add to</em> menu (figure 10). If you choose <em>mouse hover</em> you’ll only need to hover thumbnail to enable and start preview.
+								If you choose <em>click on a button</em> a new button will be added to thumbnail <em>add to</em> menu (figure 13). If you choose <em>mouse hover</em> you’ll only need to hover thumbnail to enable and start preview.
 							</dd>
 							<dt>
 								Preview add delay
@@ -2456,9 +2482,9 @@
 						<dd>
 							<figure>
 								<img src="share/image/light-icons.png" alt="Light icons"><br>
-								<figcaption>Fig 13: Light icons</figcaption>
+								<figcaption>Fig 14: Light icons</figcaption>
 							</figure>
-							When this option is enabled buttons that this extension adds to page will have light grey icons. You should enable this option if you change background colour of buttons to some dark colour (figure 13).
+							When this option is enabled buttons that this extension adds to page will have light grey icons. You should enable this option if you change background colour of buttons to some dark colour (figure 14).
 						</dd>
 						<dt>
 							Enable custom colours
@@ -2705,6 +2731,9 @@ xtt<span class="operator">.</span>ui<span class="operator">.</span>add<span clas
 			<footer>
 				<address>
 					Copyright © 2011 2012 2013 <a href="mailto:pdarko@myopera.com">Darko Pantić</a>
+				</address>
+				<address>
+					2013 <a href="mailto:an-dz@myopera.com">André Zanghelini</a>
 				</address>
 			</footer>
 		</div>
