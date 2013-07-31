@@ -3864,6 +3864,8 @@ function makeApi() {
 						&& preferences.exposeplayershortcuts
 						&& preferences.disableflashshortcuts)
 					data.disablekb = 1
+				if (preferences.bufferall)
+					data.dash = 0
 
 				// Enable YouTube’s javascript API.
 				data.enablejsapi = 1

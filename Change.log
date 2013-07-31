@@ -4,8 +4,11 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
-1.19.2
+1.20
+	+ buffer all the video option
+	# stop video default shortcut as , (comma)
 	* any key stopping video
+	* pop-out player left aligned
 	* wrong address for ExtendTube GitHub in report bug page
 	* wrong size in keyboard shortcut section in options page
 

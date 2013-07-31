@@ -314,6 +314,12 @@
 							<span>Hide ads and brand watermarks in video player.</span>
 						</li>
 						<li class="help">
+							<input type="checkbox" id="bufferall">
+							<label for="bufferall">Buffer whole video</label>
+							<span class="help">?</span>
+							<span>Video buffer will download all even paused.</span>
+						</li>
+						<li class="help">
 							<input type="checkbox" id="extensionwriteplayer">
 							<label for="extensionwriteplayer">Let extension write player</label>
 							<span class="help note">?</span>
@@ -1863,7 +1869,7 @@
 					Help
 				</h2>
 				<p id="version-notice" class="right-text note">
-					This help is for version <span>1.19.1</span>.
+					This help is for version <span>1.20</span>.
 				</p>
 				<div class="collapsed">
 					<h3 id="help/interface" class="interface link">
@@ -2178,6 +2184,12 @@
 						</dt>
 						<dd>
 							Hide ads and video watermark inside flash player.
+						</dd>
+						<dt>
+							Buffer whole video
+						</dt>
+						<dd>
+							Videos when paused buffers only part ahead of its position to save bandwidth. This option will ignore this and will always buffer the whole video even when the video is paused.
 						</dd>
 						<dt>
 							Let extension write player
