@@ -691,7 +691,7 @@ function afterScript(event) {
  */
 function beforeExternalScript(event) {
 	var src = event.element.getAttribute("src")
-	if (/googlesyndication|doubleclick|googleadservices|\/uds\/api\/ads\/|\/jsapi\?autoload[=\w\[\{:"]+"name":"ads"/.test(decodeURIComponent(src))) {
+	if (/googlesyndication|doubleclick|googletagservices|googleadservices|\/uds\/api\/ads\/|\/jsapi\?autoload[=\w\[\{:"]+"name":"ads"/.test(decodeURIComponent(src))) {
 		if (preferences.hidepageads) {
 			event.preventDefault()
 
