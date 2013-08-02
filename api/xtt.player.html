@@ -88,8 +88,7 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            How many times playback started. This value is re-setted when flash
-player is reloaded.
+                            How many times playback started. This value is re-setted when flashplayer is reloaded.
                         </div>
                             <h5>Type:</h5>
                             <ul><li>
@@ -125,8 +124,7 @@ player is reloaded.
                     </dt>
                     <dd>
                         <div class="description">
-                            Reference to player element. You can call YouTube player API methods on
-this element.
+                            Reference to player element. You can call YouTube player API methods onthis element.
                         </div>
                         <dl class="details">
                         <dt class="tag-source">
@@ -157,13 +155,7 @@ this element.
                     </dt>
                     <dd>
                         <div class="description">
-                            Current state of video playback. It may be one of:
--1 - not started
-0 - ended
-1 - playing
-2 - paused
-3 - buffering
-5 - cued
+                            Current state of video playback. It may be one of:-1 - not started0 - ended1 - playing2 - paused3 - buffering5 - cued
                         </div>
                             <h5>Type:</h5>
                             <ul><li>
@@ -213,8 +205,7 @@ this element.
                     </dt>
                     <dd>
                         <div class="description">
-                            Change video quality. If quality passed by argument is not available
-first lower quality will be set.
+                            Change video quality. If quality passed by argument is not availablefirst lower quality will be set.
                         </div>
                         <h5>Parameters:</h5>
                         <table class="params">
@@ -235,11 +226,7 @@ first lower quality will be set.
                             		String
                             	</span>
                                     </td>
-                                    <td class="description last">Possible options for this argument are: <cite>tiny</cite>,
-<cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,
-<cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>
-or <cite>default</cite>.
-Value <cite>default</cite> will be ignored.</td>
+                                    <td class="description last">Possible options for this argument are: <cite>tiny</cite>,<cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,<cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>or <cite>default</cite>.Value <cite>default</cite> will be ignored.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -400,13 +387,7 @@ Value <cite>default</cite> will be ignored.</td>
                                     </td>
                                     <td class="attributes">
                                     </td>
-                                    <td class="description last">Tell player what to do. This argument is enumerated and can be:
-<cite>play/pause</cite>, <cite>pause</cite>, <cite>play</cite>,
-<cite>stop</cite>, <cite>seek</cite> or <cite>volume</cite>.
-Command <cite>play/pause</cite> will play or pause video depending on
-current state. Command <cite>stop</cite> will pause video and stop
-buffering it. Commands <cite>seek</cite and<cite>volume</cite> will seek
-or change volume for value given by second argument.</td>
+                                    <td class="description last">Tell player what to do. This argument is enumerated and can be:<cite>play/pause</cite>, <cite>pause</cite>, <cite>play</cite>,<cite>stop</cite>, <cite>seek</cite> or <cite>volume</cite>.Command <cite>play/pause</cite> will play or pause video depending oncurrent state. Command <cite>stop</cite> will pause video and stopbuffering it. Commands <cite>seek</cite and<cite>volume</cite> will seekor change volume for value given by second argument.</td>
                                 </tr>
                                 <tr>
                                     <td class="name">
@@ -423,12 +404,7 @@ or change volume for value given by second argument.</td>
                                     <td class="attributes">
                                         &lt;optional><br>
                                     </td>
-                                    <td class="description last">This argument is needed when issuing commands <cite>seek</cite> and
-<cite>volume</cite>. If this argument is number or string written as
-&lt;number&gt;% (ex. 73%) change will be absolute regardless of current
-state. If argument is string written as +&lt;number&gt;% or
--&lt;number&gt;% (ex. +38% or -49%) change will be relative to current
-state.</td>
+                                    <td class="description last">This argument is needed when issuing commands <cite>seek</cite> and<cite>volume</cite>. If this argument is number or string written as&lt;number&gt;% (ex. 73%) change will be absolute regardless of currentstate. If argument is string written as +&lt;number&gt;% or-&lt;number&gt;% (ex. +38% or -49%) change will be relative to currentstate.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -480,9 +456,7 @@ state.</td>
                                     <td class="default">
                                         undefined
                                     </td>
-                                    <td class="description last">Should player be expanded (<code>true</code>) or shrinked
-(<code>false</code>). If this parameter is missing player size will be
-alternated (if it was wide it will become normal and vice versa).</td>
+                                    <td class="description last">Should player be expanded (<code>true</code>) or shrinked(<code>false</code>). If this parameter is missing player size will bealternated (if it was wide it will become normal and vice versa).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -505,9 +479,7 @@ alternated (if it was wide it will become normal and vice versa).</td>
                     </dt>
                     <dd>
                         <div class="description">
-                            This method will play only one frame of video. This is usually emulated
-using time-out, but since Opera 11.60 for HTML 5 videos it will
-accurately play one frame (it will advance video for 40ms).
+                            This method will play only one frame of video. This is usually emulatedusing time-out, but since Opera 11.60 for HTML 5 videos it willaccurately play one frame (it will advance video for 40ms).
                         </div>
                         <dl class="details">
                         <dt class="tag-source">
@@ -557,8 +529,7 @@ accurately play one frame (it will advance video for 40ms).
                                     <td class="default">
                                         true
                                     </td>
-                                    <td class="description last">Whether annotations should be visible (<code>false</code>) or hidden
-(<code>true</code>).</td>
+                                    <td class="description last">Whether annotations should be visible (<code>false</code>) or hidden(<code>true</code>).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -610,13 +581,7 @@ accurately play one frame (it will advance video for 40ms).
                                     <td class="default">
                                         3
                                     </td>
-                                    <td class="description last">New value for auto-hide option. Possible options are:
-0 = controls and progress bar always visible,
-1 = controls and progress bar will be hidden after few seconds,
-2 = controls will be visible; progress bar will be minimised
-	   after few seconds,
-3 = controls will be hidden; progress bar will be minimised
-    after few seconds.</td>
+                                    <td class="description last">New value for auto-hide option. Possible options are:0 = controls and progress bar always visible,1 = controls and progress bar will be hidden after few seconds,2 = controls will be visible; progress bar will be minimised	   after few seconds,3 = controls will be hidden; progress bar will be minimised    after few seconds.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -653,8 +618,7 @@ accurately play one frame (it will advance video for 40ms).
                     </dl>
                         <h5>Returns:</h5>
                         <div class="param-desc">
-                            <code>true</code> if loop is forced or looping section;
-<code>false</code> otherwise.
+                            <code>true</code> if loop is forced or looping section;<code>false</code> otherwise.
                         </div>
                         <dl>
                             <dt>
@@ -696,8 +660,7 @@ accurately play one frame (it will advance video for 40ms).
                             		Boolean
                             	</span>
                                     </td>
-                                    <td class="description last">Whether to seek forward (<code>true</code>)
-or backwards (<code>false</code>).</td>
+                                    <td class="description last">Whether to seek forward (<code>true</code>)or backwards (<code>false</code>).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -721,7 +684,7 @@ or backwards (<code>false</code>).</td>
     </nav>
     <br clear="both">
     <footer>
-        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Jul 08 2013 07:18:22 GMT-0300 (BRT)
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Aug 01 2013 20:00:22 GMT-0300 (BRT)
     </footer>
 </body>
 </html>

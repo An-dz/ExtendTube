@@ -4,9 +4,10 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
-1.20
+01.08.2013 - 1.20
 	+ buffer all the video option
 	# stop video default shortcut as , (comma)
+	* in-video ads not blocked
 	* any key stopping video
 	* pop-out player left aligned
 	* wrong address for ExtendTube GitHub in report bug page

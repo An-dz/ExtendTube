@@ -3821,11 +3821,6 @@ function makeApi() {
 					return
 				}
 
-				if (!data.watermark || data.watermark.indexOf("vevo") < 0)
-					// This parameter prevents all interaction with player when
-					// video has viewer discretion warning at the beginning.
-					delete data.t
-
 				// Remove in-video ads.
 				if (preferences.hideplayerads || this.isPreview) {
 					for (var property in data)
