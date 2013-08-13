@@ -6,11 +6,15 @@ This extension extends YouTube player capabilities. It will add few buttons on p
 - hide ads on page
 - hide in-video ads
 - disable autoplay
+- force buffer whole video
 - loop video (or selected part)
 - force video quality
+- prevent cross play
+- autoplay on page focus
 - enable wide player
 - autohide video controls
 - hide video annotations
+- 'pop-out' darkens page and centralize video
 - download video (SD, HD, 3D, WebM, Mobile)
 - download just audio (MP3) - see help
 - load lyrics for video (from lyrics.wikia.com)
@@ -21,7 +25,7 @@ This extension extends YouTube player capabilities. It will add few buttons on p
 - change page colours
 - change player theme
 - add custom CSS
-- add custom JavaScript
+- add custom JavaScript (Actions)
 - detect videos embedded in other sites (only via iframe)
 - watch HTML 5 videos in full screen (F11) - see help
 

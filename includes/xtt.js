@@ -733,7 +733,7 @@ function beforeScript(event) {
 
 	if (/www(-|_)channel/.test(src))
 		xtt.video.isChannel = true /*TODO*/
-	else if (/www_base_mod/.test(src) || /www-watch7?-extra/.test(src))
+	else if (/www_base_mod/.test(src) || /www_watch_mod/.test(src))
 		event.element.text = injectForceLoopCheck(event.element.text)
 	// Iframe embedded videos.
 	else if (xtt.video.isPreview && /www(-|_)embed/.test(src)) {
@@ -1654,7 +1654,7 @@ function injectForceLoopCheck(text) {
 
 	var stateChange = text.match(/\("onStateChange",([^\)]+)\)/)
 	if (stateChange && stateChange[1])
-		stateChange = new RegExp("(function " + stateChange[1] + "\\(a\\)\\{)", "g")
+		stateChange = new RegExp("(var " + stateChange[1] + "=function\\(a\\)\\{)", "g")
 	else
 		stateChange = /(function Om\(a\)\{)/
 	// Prevent loading next video.
