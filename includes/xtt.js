@@ -2458,7 +2458,7 @@ function makeApi() {
 		 * @private
 		 */
 		writePlayer: function () {
-			var player = document.querySelector("#movie_player") /*#player-api, #watch-player, #watch7-player TODO*/
+			var player = document.querySelector("#movie_player")
 			if (player && player.querySelector("[id*=\"player-unavailable\"]"))
 				return
 
@@ -3421,7 +3421,7 @@ function makeApi() {
 		 * (<code>true</code>) or to move it back into flow (<code>false</code>).
 		 */
 		popoutPlayer: function applyPopoutPlayer(popout) {
-			var watch = document.querySelector("#player") //#watch7-video, #watch-video, #watch7-player, #watch-player, .channels-video-player
+			var watch = document.querySelector("#player, #player-legacy")
 			if (!watch)
 				return
 
@@ -3825,7 +3825,8 @@ function makeApi() {
 				if (preferences.hideplayerads || this.isPreview) {
 					for (var property in data)
 						if (/ad\d?_|afv|watermark|adsense|xfp/.test(property))
-							delete data[property]
+							if (!/policy/.test(property))
+								delete data[property]
 
 					log.info('In-video ads disabled.')
 				}

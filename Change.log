@@ -4,6 +4,12 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+16.08.2013 - 1.20.1
+	# stop player shortcut changed to ; (semicolon)
+	* pop-out player not working
+	* fullscreen not working
+	* annotations always hidden
+
 01.08.2013 - 1.20
 	+ buffer all the video option
 	# stop video default shortcut as , (comma)
