@@ -1644,7 +1644,7 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(b=a\.getApiInterface\(\);.*;for\(var )/,
+	return text.replace(/(b=a\.getApiInterface\(\),)/,
 						"$1sEx=(" + apiSetter.toString() + ")(this),")
 }
 
