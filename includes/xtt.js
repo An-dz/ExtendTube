@@ -733,8 +733,12 @@ function beforeScript(event) {
 
 	if (/www(-|_)channel/.test(src))
 		xtt.video.isChannel = true /*TODO*/
-	else if (/www_base_mod/.test(src) || /www_watch_mod/.test(src))
+	else if (/www_base_mod/.test(src) || /www_watch_mod/.test(src)) {
 		event.element.text = injectForceLoopCheck(event.element.text)
+		// Remove the non-ASCI play symbol from the title name
+		if (preferences.disablePlaySymbol)
+			event.element.text = event.element.text.replace(/"\\u25b6 "/,"''")
+	}
 	// Iframe embedded videos.
 	else if (xtt.video.isPreview && /www(-|_)embed/.test(src)) {
 		// Prevent “restricted embedding” message.
