@@ -37,7 +37,7 @@ sha1sum $(find . -not -name "*.oex" -not -name "*.txt" -not -name "*SHA1SUM" -ty
 echo -e "${GREEN}Checksum generated.${NOCOLOUR}"
 
 echo -e "${YELLOW}Building ${GREEN}${NAME}${NOCOLOUR}${YELLOW}...${NOCOLOUR}"
-7z a -tzip -mx=9 $NAME -- api includes lib share Change.log config.xml COPYING index.html make-oex options.html README SHA1SUM translation.source xtt.hack
+7z a -tzip -mx=9 $NAME -- api includes lib share Change.log config.xml COPYING.md index.html make-oex options.html README.md SHA1SUM translation.source xtt.hack
 
 if [ $? -eq 0 ]; then
 	echo -e "${YELLOW}Generating checksum of built extension.${NOCOLOUR}"

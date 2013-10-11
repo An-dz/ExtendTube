@@ -4,6 +4,14 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+10.10.2013 - 1.21
+	+ option to enable autoplay only on playlists
+	+ option to remove play symbol from title
+	# renamed mobile (low) to 144p
+	* hide top comments
+	* hide uploader comments
+	* API not being injected
+
 16.08.2013 - 1.20.1
 	# stop player shortcut changed to ; (semicolon)
 	* pop-out player not working

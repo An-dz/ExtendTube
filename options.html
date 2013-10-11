@@ -340,6 +340,14 @@
 							<span>Prevent videos from starting automatically.</span>
 							<ul class="sub-group h1">
 								<li>
+									<input type="checkbox" id="autoplayOnPlaylist">
+									<label for="autoplayOnPlaylist">Enable autoplay on playlists</label>
+									<span class="help">?</span>
+									<span>Autoplay will be kept on playlists.<br>
+								</li>
+							</ul>
+							<ul class="sub-group h1">
+								<li>
 									<input type="checkbox" id="disableautobuffering">
 									<label for="disableautobuffering">Disable auto buffering</label>
 									<span class="help note">?</span>
@@ -1877,7 +1885,7 @@
 					Help
 				</h2>
 				<p id="version-notice" class="right-text note">
-					This help is for version <span>1.20</span>.
+					This help is for version <span>1.21</span>.
 				</p>
 				<div class="collapsed">
 					<h3 id="help/interface" class="interface link">
@@ -2219,6 +2227,12 @@
 						</dd>
 						<dl>
 							<dt>
+								Enable autoplay on playlists
+							</dt>
+							<dd>
+								Overwrite the disable autoplay option on playlists making the video autoplay on them.
+							</dd>
+							<dt>
 								Disable auto buffering
 							</dt>
 							<dd>
@@ -2447,6 +2461,12 @@
 								This option will make the rating bar be included in the description box rather than inside the thumbnail.
 							</dd>
 						</dl>
+						<dt>
+							Remove play symbol from title
+						</dt>
+						<dd>
+							Removes the non-ASCI play symbol ( &#9654; ) from the tab title name keeping only the video name in the title.
+						</dd>
 						<dt>
 							Only player in full screen
 						</dt>

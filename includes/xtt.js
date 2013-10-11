@@ -1600,8 +1600,13 @@ function getVideoID(anchor) {
  * Play video if necessary.
  */
 function handleAutoPlay() {
-	if (preferences.disableAutoPlay)
+	if (preferences.disableAutoPlay) {
+		if (xtt.video.isPlaylist && preferences.autoplayOnPlaylist) {
+			log.info('Video will be played. Autoplay on playlists is: true')
+			xtt.player.control("play")
+		}
 		return
+	}
 
 	if (xtt.video.isEmbedded) {
 		if  (xtt.video.isPopup && xtt.player.autoplay && xtt.player.state != 1) {
