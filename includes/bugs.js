@@ -28,7 +28,8 @@
 	function insertNotice(event) {
 		var ff = document.querySelector("#feedback-form"),
 			span = document.createElement("span"),
-			id = document.querySelector("#feedback-form #id_browser")
+			id = document.querySelector("#feedback-form #id_browser"),
+			tarea = document.querySelector("#id_plain_text")
 
 		if (!ff)
 			return
@@ -38,7 +39,7 @@
 		span.setAttribute("id", "xtt-notice")
 		if (window.location.search.indexOf("reports") < 0) {
 			span.textContent =
-				"Please do not ask questions here. " +
+				"Please do not ask questions or report bugs here. " +
 				"I do read reviews, but I can not answer your question here. " +
 				"To ask question go to support page or write me an email (pdarko@myopera.com)."
 		}
@@ -90,7 +91,7 @@
 #xtt-notice {\n\
 	float: right;\n\
 	color: red;\n\
-	font-size: 1.3em;\n\
+	font-size: 1.5em;\n\
 	-o-transition: all .2s;\n\
 }\n\
 #xtt-notice.link {\n\
