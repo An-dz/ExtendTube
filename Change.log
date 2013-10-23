@@ -4,6 +4,13 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+23.10.2013 - 1.21.1
+	# buffer whole video new description
+	# Italian translation (thx bebabi34)
+	# unnaproved version check
+	* white backgound on sidebar
+	* other small fixes and changes
+
 10.10.2013 - 1.21
 	+ option to enable autoplay only on playlists
 	+ option to remove play symbol from title

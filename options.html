@@ -244,8 +244,8 @@
 									<label for="allowautoupdate">Allow auto update</label>
 									<span class="help note">?</span>
 									<span>Allow extension to auto update itself. This option works only for approved updates.<br>
-									<span class="note">Note</span>: Update will be installed from https://extension-updates.opera.com.<br>
-									<span class="note">Note 2</span>: This option will work only if you installed extension from https://addons.opera.com.</span>
+									<span class="note">Note</span>: Update will be installed from<br>https://extension-updates.opera.com.<br>
+									<span class="note">Note 2</span>: This option will work only if you installed extension from<br>https://addons.opera.com.</span>
 								</li>
 							</ul>
 						</li>
@@ -315,10 +315,11 @@
 						</li>
 						<li class="help">
 							<input type="checkbox" id="bufferall">
-							<label for="bufferall">Buffer whole video</label>
+							<label for="bufferall">Buffer whole video (READ NOTE/HELP)</label>
 							<span class="help note">?</span>
 							<span>Video buffer will download all even paused.<br>
-							<span class="note">Note</span>: Flash player will not respond to changes until page is reloaded.</span></span>
+							<span class="note">Note</span>: Flash player will not respond to changes until page is reloaded.<br>
+							<span class="note">Note 2: This option have know bugs, read help for more info.</span></span>
 						</li>
 						<li class="help">
 							<input type="checkbox" id="extensionwriteplayer">
@@ -480,7 +481,7 @@
 							<input type="checkbox" id="hidepageads">
 							<label for="hidepageads">Hide ads on page</label>
 							<span class="help">?</span>
-							<span>Disable scripts which load ads (doubleckick, googlesyndication).</span>
+							<span>Disable scripts which load ads (doubleclick, googlesyndication, googletagmanager).</span>
 						</li>
 						<li class="help">
 							<input type="checkbox" id="overridelocale">
@@ -2206,7 +2207,7 @@
 							Buffer whole video
 						</dt>
 						<dd>
-							Videos when paused buffers only part ahead of its position to save bandwidth. This option will ignore this and will always buffer the whole video even when the video is paused.
+							Videos when paused buffers only part ahead of its position to save bandwidth. This option will ignore this and will always buffer the whole video even when the video is paused. <span style="color:red">This option forces a feature removed and no more maintained by YouTube, like a compatibility mode, it's know to cause lot of bugs and/or unwanted behaviours like no 1080p or 144p options.</span> If you have any problems with ExtendTube, try disabling this option.
 						</dd>
 						<dt>
 							Let extension write player
