@@ -935,14 +935,14 @@ function decodeStreamMap(map) {
 		var itag = url.match(/itag=(\d+)/),
 			fallback = url.match(/fallback_host=([^&]+)/),
 			sig = url.match(/sig=([^&]+)/),
+			url = url.match(/url=([^&]+)/)
 			item = {}
 
 		if (itag && itag[1])
 			item.itag = itag[1]
 		else
 			item.itag = 0
-
-		url = url.match(/url=([^&]+)/)
+		
 		if (url && url[1])
 			item.url = url[1]
 		else
@@ -1653,7 +1653,7 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(b=a\.getApiInterface\(\),)/,
+	return text.replace(/(b=b\.concat\(a\.getInternalApiInterface\(\)\);for\()/,
 						"$1sEx=(" + apiSetter.toString() + ")(this),")
 }
 
@@ -4236,6 +4236,7 @@ function makeLogApi() {
 		}
 	}
 }
+
 /**
  * Make POST data for fetching video ratings.
  *
