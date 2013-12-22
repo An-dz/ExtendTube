@@ -4,6 +4,14 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+22.12.2013 - 1.21.2
+	+ default dark colour
+	+ set dark colour button
+	# better lyrics formatting
+	* custom colours
+	* pop-out behind header
+	* hide header
+
 14.11.2013 - 1.21.1.1
 	# changed links and emails
 
