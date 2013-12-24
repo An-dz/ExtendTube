@@ -722,7 +722,7 @@ function beforeScript(event) {
 				return event.preventDefault()
 
 		// Write player to embedded pages.
-		event.element.text = event.element.text.replace("yt.embed.writeEmbed()",
+		event.element.text = event.element.text.replace("writeEmbed()",
 														"opera.xtt.player.writePlayer()")
 
 		return
