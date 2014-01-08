@@ -16,11 +16,11 @@ ac611b693bffa702e6ad1950026ab10ddfd6de6d  ./api/xtt.ui.apply.html
 daad5797dc44b5836b3196ac80748abe42cb1d62  ./api/xtt.ui.html
 36c06522abfc914cfb0b3cdde199e2af31d678dd  ./api/xtt.ui.remove.html
 7018017f4fb59eb47b5abed893b1597b0cb37dfc  ./api/xtt.video.html
-004ce71f56e9057be69c02cc4af59220973ef100  ./Change.log
-c38af92dcfaae4d4c86b5fcd008286c6dceba47c  ./config.xml
+5b6bffee0b00c45b5851ff282b966b8b6a8c9af4  ./Change.log
+c7505d826c50318d451d8e9e87dc4566f6ffe292  ./config.xml
 2b8b815229aa8a61e483fb4ba0588b8b6c491890  ./COPYING.md
 cd02610d22cd34500a557b6fb9e6ad372ca56752  ./includes/bugs.js
-51338a6aaa07a517c2e9a32ca4e9bc730e20813f  ./includes/xtt.js
+6440a03c24b21702f0849017820ed91def8e9f68  ./includes/xtt.js
 2fd12f339702abe314392992c36e0c8ae789a787  ./index.html
 39ee6eb45ef9301f9c016c7f89a0011e82d90335  ./lib/background.js
 7f1f73b33d01e573fbaf99169bf96cfb2561ad01  ./lib/error.js
@@ -43,7 +43,7 @@ a30605ecc72bf18b47626b200488d3697dedc73a  ./lib/opt-listen.js
 69b7e504bb3b1dd797d03da212e4d2c089728481  ./lib/opt-scats.js
 c7750dbd5550d4ae5b1e2696098276b83cf9fa0f  ./lib/popup.js
 1938520835226ff815a317289b7ca176fa45d044  ./lib/preferences.js
-ca33dcf9bc122a4c7fe9f3c0e3ccc8b435ea9c2b  ./lib/style.js
+4588b4cb3bf612ca7a417498bde7791e2df803e3  ./lib/style.js
 f4baec31d60d9d0541f4a22a1c7a84c605b36755  ./lib/translations.js
 6c9c5bee2660ad3d1b84fe2330290d0950c7b73e  ./lib/update.js
 20c24dda18de5cf4ca4c0ff8da61deea92f79694  ./lib/videoFormat.js

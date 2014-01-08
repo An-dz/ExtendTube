@@ -4,6 +4,10 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+07.01.2014 - 1.21.3
+	* API not being injected
+	* colourise header border
+
 22.12.2013 - 1.21.2
 	+ default dark colour
 	+ set dark colour button
