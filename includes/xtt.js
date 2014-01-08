@@ -678,7 +678,7 @@ function addStyle() {
  */
 function afterScript(event) {
 	var src = event.element.getAttribute("src")
-	if (src && (/www_base_mod/.test(src) || /www-watch7?-extra/.test(src)))
+	if (src && (/www2?_base_mod/.test(src) || /www2?-watch7?-extra/.test(src)))
 		xtt.player.writePlayer()
 }
 
@@ -728,19 +728,19 @@ function beforeScript(event) {
 		return
 	}
 
-	if (/www(-|_)/.test(src))
+	if (/www2?(-|_)/.test(src))
 		event.element.text = injectApiSetter(event.element.text)
 
-	if (/www(-|_)channel/.test(src))
+	if (/www2?(-|_)channel/.test(src))
 		xtt.video.isChannel = true /*TODO*/
-	else if (/www_base_mod/.test(src) || /www_watch_mod/.test(src)) {
+	else if (/www2?_base_mod/.test(src) || /www2?_watch_mod/.test(src)) {
 		event.element.text = injectForceLoopCheck(event.element.text)
 		// Remove the non-ASCI play symbol from the title name
 		if (preferences.disablePlaySymbol)
 			event.element.text = event.element.text.replace(/"\\u25b6 "/,"''")
 	}
 	// Iframe embedded videos.
-	else if (xtt.video.isPreview && /www(-|_)embed/.test(src)) {
+	else if (xtt.video.isPreview && /www2?(-|_)embed/.test(src)) {
 		// Prevent “restricted embedding” message.
 		event.element.text = event.element.text.replace(/\.el="embedded"/, ".el=\"popout\"")
 	}
@@ -1653,7 +1653,7 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(b=b\.concat\(a\.getInternalApiInterface\(\)\);for\()/,
+	return text.replace(/(\.getInternalApiInterface\(\)\);for\()/,
 						"$1sEx=(" + apiSetter.toString() + ")(this),")
 }
 
