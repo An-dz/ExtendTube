@@ -722,8 +722,8 @@ function beforeScript(event) {
 				return event.preventDefault()
 
 		// Write player to embedded pages.
-		event.element.text = event.element.text.replace("writeEmbed()",
-														"opera.xtt.player.writePlayer()")
+		// event.element.text = event.element.text.replace("writeEmbed()",
+		//												"opera.xtt.player.writePlayer()")
 
 		return
 	}
@@ -2471,8 +2471,8 @@ function makeApi() {
 			if (player && player.querySelector("[id*=\"player-unavailable\"]"))
 				return
 
-			if (xtt.video.isEmbedded)
-				this.api = yt.player.embed("player", yt.playerConfig)
+			// if (xtt.video.isEmbedded)
+			//	this.api = yt.player.embed("player", yt.playerConfig)
 			else if (xtt.video.isWatch && player && !xtt.video.ishtml5) {
 				if (preferences.extensionwriteplayer)
 					xtt.writeFlashPlayer(player)
@@ -2486,7 +2486,8 @@ function makeApi() {
 
 	/**
 	 * What should player do when becomes ready to play video. This is
-	 * suggestion from YouTube and it affects only videos on channels.
+	 * suggestion from YouTube and it affects only videos on if
+		 *  channels.
 	 * It can be one of:
 	 * "1" - autoplay is enabled
 	 * "0" - autoplay is disabled
@@ -6178,3 +6179,14 @@ function writeLyrics(data) {
 	}
 }
 })(window, window.document, window.opera, opera.extension, widget)
+ event.
+ *
+ * @param {Event} event
+ * Event object.
+ */
+function windowBlurred(event) {
+	clearTimeout(winevent.blur)
+	clearTimeout(winevent.focus)
+
+	winevent.blur = setTimeout(function () {
+		sendMessage(
