@@ -2486,8 +2486,7 @@ function makeApi() {
 
 	/**
 	 * What should player do when becomes ready to play video. This is
-	 * suggestion from YouTube and it affects only videos on if
-		 *  channels.
+	 * suggestion from YouTube and it affects only videos on channels.
 	 * It can be one of:
 	 * "1" - autoplay is enabled
 	 * "0" - autoplay is disabled
@@ -6179,14 +6178,3 @@ function writeLyrics(data) {
 	}
 }
 })(window, window.document, window.opera, opera.extension, widget)
- event.
- *
- * @param {Event} event
- * Event object.
- */
-function windowBlurred(event) {
-	clearTimeout(winevent.blur)
-	clearTimeout(winevent.focus)
-
-	winevent.blur = setTimeout(function () {
-		sendMessage(
