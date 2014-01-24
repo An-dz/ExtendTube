@@ -4,6 +4,9 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
+24.01.2014 - 1.21.3
+	* Fixed embedded videos
+
 07.01.2014 - 1.21.3
 	* API not being injected
 	* colourise header border
