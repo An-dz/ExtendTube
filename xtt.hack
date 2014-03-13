@@ -17,6 +17,13 @@ new value and click apply.
 
 This preferences are not configurable from preferences page:
 
+enabledashdownload - default false
+	Enable to include dash video/audio streams to download list.
+	Dash is codec agnostic and servers don't set file name
+	you have to define the name of the files everytime you download.
+	Dash downloads will start with * (asterisk) for easy identification.
+	Download option	must be enabled for this option to work.
+
 firstrun - default false
 	Only presence of this option in storage is required; value can be anything.
 	If you remove it from storage you'll see "First Run" message on next start

@@ -3942,6 +3942,8 @@ function makeApi() {
 
 				if (args.hasOwnProperty("url_encoded_fmt_stream_map"))
 					this.urlmap = decodeStreamMap(args.url_encoded_fmt_stream_map)
+				if (args.hasOwnProperty("adaptive_fmts") && preferences.enabledashdownload)
+					this.urlmap = this.urlmap.concat(decodeStreamMap(args.adaptive_fmts))
 
 				this.length = parseInt(args.length_seconds, 10)
 
