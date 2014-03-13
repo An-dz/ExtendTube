@@ -1059,42 +1059,6 @@ function domContentLoaded(event) {
 			featured.lastElementChild.classList.add("ext-related-videos")
 	}
 
-	// Add classes for hiding comments
-	Array.prototype.forEach.call(document.querySelectorAll("#comments-view ul"), function (list) {
-		// Uploader's comments.
-		if (list.querySelector("li[data-tag=\"upload\"]")) {
-			list.classList.add("ext-uploader-comments")
-			if (list.previousElementSibling.nodeName.toLowerCase() == "h4")
-				list.previousElementSibling.classList.add("ext-uploader-comments")
-			if (list.nextElementSibling.nodeName.toLowerCase() == "hr")
-				list.nextElementSibling.classList.add("ext-uploader-comments")
-		}
-		// Top comments.
-		else if (list.querySelector("li[data-tag=\"top\"]")) {
-			list.classList.add("ext-top-comments")
-			if (list.previousElementSibling.nodeName.toLowerCase() == "h4")
-				list.previousElementSibling.classList.add("ext-top-comments")
-			if (list.nextElementSibling.nodeName.toLowerCase() == "hr")
-				list.nextElementSibling.classList.add("ext-top-comments")
-		}
-		// Video responses.
-		else if (list.classList.contains("video-list")) {
-			list.classList.add("ext-video-responses")
-			if (list.previousElementSibling.nodeName.toLowerCase() == "h4")
-				list.previousElementSibling.classList.add("ext-video-responses")
-			if (list.nextElementSibling.nodeName.toLowerCase() == "hr")
-				list.nextElementSibling.classList.add("ext-video-responses")
-		}
-		// All comments.
-		else if (list.getAttribute("id") == "all-comments") {
-			list.parentNode.classList.add("ext-all-comments")
-
-			list = document.querySelector("#comments-view .comments-pagination")
-			if (list)
-				list.classList.add("ext-all-comments")
-		}
-	})
-
 	xtt.ui.apply.cleanPage()
 	modifyDocument(skip)
 }
