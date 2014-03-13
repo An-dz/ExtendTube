@@ -4439,8 +4439,8 @@ function messageReceived(event) {
  * Says if language is already set earlier.
  */
 function modifyDocument(skipLanguage) {
-	var elem = document.querySelector("#watch7-content, #watch-content,"
-									 + " .channels-featured-video-details")
+	var elem = document.querySelector("#watch7-content #watch7-headline")
+
 	if (!elem)
 		return
 
@@ -4460,7 +4460,7 @@ function modifyDocument(skipLanguage) {
 	container.classList.add("yt-uix-button-panel")
 	buttons.classList.add("ext-actions-right")
 	container.appendChild(buttons)
-	elem.insertAdjacentElement("afterbegin", container)
+	elem.insertAdjacentElement("afterEnd", container)
 
 	// Add buttons.
 	if (preferences.prefbutton)
