@@ -13,6 +13,8 @@
 // @exclude			https://www.youtube.com/editor*
 // @exclude			http://www.youtube.com/analytics*
 // @exclude			https://www.youtube.com/analytics*
+// @exclude			http://www.youtube.com/pair*
+// @exclude			https://www.youtube.com/pair*
 // ==/UserScript==
 
 /*
