@@ -50,6 +50,7 @@ if (/^\/v\//.test(window.location.pathname)) {
 }
 
 document.addEventListener("DOMContentLoaded", domContentLoaded, false)
+document.addEventListener("DOMNodeInserted", domNodeInserted, false)
 
 extension.addEventListener("disconnect", connectionLost, false)
 extension.addEventListener("message", messageReceived, false)
@@ -1048,6 +1049,79 @@ function domContentLoaded(event) {
 		if (langalert.querySelector("#default-language-message"))
 			langalert.classList.add("ext-language-alert")
 	})
+
+	if (!xtt.video.isChannel && !xtt.video.isWatch)
+		return xtt.ui.apply.cleanPage()
+
+	// Add class for hiding featured videos.
+	var featured = document.querySelector("#watch7-sidebar, #watch-sidebar")
+	if (featured) {
+		if (featured.childElementCount == 2)
+			featured.firstElementChild.classList.add("ext-featured-videos")
+		if (featured.lastElementChild != featured.firstElementChild)
+			featured.lastElementChild.classList.add("ext-related-videos")
+	}
+
+	xtt.ui.apply.cleanPage()
+	modifyDocument(skip)
+}
+
+/**
+ * Event listener for <cite>DOMNodeInserted</cite> event.
+ * Register listener in progress bar checking for its removing.
+ *
+ * @param {Event} event
+ * Event object.
+ */
+function domNodeInserted(event) {
+	if (event.target.id == "progress") {
+		event.target.addEventListener("DOMNodeRemoved", domNodeRemoved, false)
+
+		log.info("Progress element inserted and remove listener injected.")
+
+		// We null all button references because they will be removed and re-created.
+		for (var key in references)
+			references[key] = null
+	}
+}
+
+/**
+ * Event listener for <cite>DOMNodeRemoved</cite> event.
+ * When progress bar is removed a new page has loaded.
+ *
+ * For actions compatibility we change event.type to DOMContentLoaded
+ *
+ * @param {Event} event
+ * Event object.
+ */
+function domNodeRemoved(event) {
+	log.info("Progress element removed.",
+			 "Reinitialising xtt functions.")
+
+	event.type = "DOMContentLoaded"
+
+	loaded(event)
+	removeIFrameAds(event)
+
+	// Set language.
+	var lang = document.querySelector("link[href*=\"locale=\"]"),
+		skip = false
+	if (lang && lang.getAttribute("href").match(/[a-z]{2,3}_[A-Z]{2}/)) {
+		xtt.ll.setLanguage(lang.getAttribute("href").match(/[a-z]{2,3}_[A-Z]{2}/)[0])
+		skip = true
+	}
+	else {
+		xtt.ll.setLanguage(document.documentElement.getAttribute("lang"))
+		skip = true
+	}
+
+	// Add thumbnail preview.
+	if (preferences.thumbpreview)
+		xtt.ui.add.thumbPreview()
+
+	// Add video ratings.
+	if (preferences.ratevideos)
+		xtt.ui.add.videoRatings()
 
 	if (!xtt.video.isChannel && !xtt.video.isWatch)
 		return xtt.ui.apply.cleanPage()
@@ -5849,7 +5923,7 @@ function updateRatings(data) {
 	}
 
 	var thumbs = document.querySelectorAll("a[href*=\"/watch?\"], a[href*=\"/user/\"],"
-										   + " div.ux-thumb-wrap"),
+										   + " div.ux-thumb-wrap, a.ux-thumb-wrap"),
 		loadMore = document.querySelectorAll("#watch-more-from-user, #watch-more-related,"
 											 + " #watch-sidebar .watch-sidebar-body, #feed,"
 											 + " .gh-single-playlist")
