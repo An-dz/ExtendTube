@@ -681,7 +681,7 @@ function addStyle() {
  */
 function afterScript(event) {
 	var src = event.element.getAttribute("src")
-	if (src && (/www2?_base_mod/.test(src) || /www2?-watch7?-extra/.test(src)))
+	if (src && (/www-.*base/.test(src) || /www-.*watch\.js/.test(src)))
 		xtt.player.writePlayer()
 }
 
@@ -720,7 +720,7 @@ function beforeScript(event) {
 	if (/^data:application\/javascript/.test(src))
 		return
 
-	if (!src) {
+/*	if (!src) {
 		if (/x-shockwave-flash/.test(event.element.text))
 				return event.preventDefault()
 
@@ -729,14 +729,14 @@ function beforeScript(event) {
 		//												"opera.xtt.player.writePlayer()")
 
 		return
-	}
+	}*/
 
-	if (/www2?(-|_)/.test(src))
+	if (/www-/.test(src))
 		event.element.text = injectApiSetter(event.element.text)
 
 	if (/www2?(-|_)channel/.test(src))
-		xtt.video.isChannel = true /*TODO*/
-	else if (/www2?_base_mod/.test(src) || /www2?_watch_mod/.test(src)) {
+		xtt.video.isChannel = true
+	else if (/www-.*base/.test(src) || /www-.*watch\.js/.test(src)) {
 		event.element.text = injectForceLoopCheck(event.element.text)
 		// Remove the non-ASCI play symbol from the title name
 		if (preferences.disablePlaySymbol)
@@ -1703,7 +1703,7 @@ function injectForceLoopCheck(text) {
 
 	var stateChange = text.match(/\("onStateChange",([^\)]+)\)/)
 	if (stateChange && stateChange[1])
-		stateChange = new RegExp("(var " + stateChange[1] + "=function\\(a\\)\\{)", "g")
+		stateChange = new RegExp("(var " + stateChange[1] + "=function\(\)\{)", "g")
 	else
 		stateChange = /(function Om\(a\)\{)/
 	// Prevent loading next video.
