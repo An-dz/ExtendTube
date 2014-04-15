@@ -29,7 +29,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 1972
+                                xtt.js, line 2012
                             </li></ul>
                         </dd>
                     </dl>
@@ -65,7 +65,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2005
+                                xtt.js, line 2045
                             </li></ul>
                         </dd>
                         <dt class="tag-see">
@@ -88,7 +88,8 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            How many times playback started. This value is re-setted when flashplayer is reloaded.
+                            How many times playback started. This value is re-setted when flash
+player is reloaded.
                         </div>
                             <h5>Type:</h5>
                             <ul><li>
@@ -111,7 +112,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 1998
+                                xtt.js, line 2038
                             </li></ul>
                         </dd>
                     </dl>
@@ -124,7 +125,8 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            Reference to player element. You can call YouTube player API methods onthis element.
+                            Reference to player element. You can call YouTube player API methods on
+this element.
                         </div>
                         <dl class="details">
                         <dt class="tag-source">
@@ -132,7 +134,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2013
+                                xtt.js, line 2053
                             </li></ul>
                         </dd>
                         <dt class="tag-see">
@@ -155,7 +157,13 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            Current state of video playback. It may be one of:-1 - not started0 - ended1 - playing2 - paused3 - buffering5 - cued
+                            Current state of video playback. It may be one of:
+-1 - not started
+0 - ended
+1 - playing
+2 - paused
+3 - buffering
+5 - cued
                         </div>
                             <h5>Type:</h5>
                             <ul><li>
@@ -178,7 +186,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2039
+                                xtt.js, line 2079
                             </li></ul>
                         </dd>
                         <dt class="tag-see">
@@ -205,7 +213,8 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            Change video quality. If quality passed by argument is not availablefirst lower quality will be set.
+                            Change video quality. If quality passed by argument is not available
+first lower quality will be set.
                         </div>
                         <h5>Parameters:</h5>
                         <table class="params">
@@ -226,7 +235,11 @@
                             		String
                             	</span>
                                     </td>
-                                    <td class="description last">Possible options for this argument are: <cite>tiny</cite>,<cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,<cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>or <cite>default</cite>.Value <cite>default</cite> will be ignored.</td>
+                                    <td class="description last">Possible options for this argument are: <cite>tiny</cite>,
+<cite>small</cite>, <cite>medium</cite>, <cite>large</cite>,
+<cite>hd720</cite>, <cite>hd1080</cite>, <cite>highres</cite>
+or <cite>default</cite>.
+Value <cite>default</cite> will be ignored.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -236,7 +249,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2053
+                                xtt.js, line 2093
                             </li></ul>
                         </dd>
                         <dt class="tag-see">
@@ -298,7 +311,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2065
+                                xtt.js, line 2105
                             </li></ul>
                         </dd>
                     </dl>
@@ -350,7 +363,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2086
+                                xtt.js, line 2126
                             </li></ul>
                         </dd>
                     </dl>
@@ -387,7 +400,13 @@
                                     </td>
                                     <td class="attributes">
                                     </td>
-                                    <td class="description last">Tell player what to do. This argument is enumerated and can be:<cite>play/pause</cite>, <cite>pause</cite>, <cite>play</cite>,<cite>stop</cite>, <cite>seek</cite> or <cite>volume</cite>.Command <cite>play/pause</cite> will play or pause video depending oncurrent state. Command <cite>stop</cite> will pause video and stopbuffering it. Commands <cite>seek</cite and<cite>volume</cite> will seekor change volume for value given by second argument.</td>
+                                    <td class="description last">Tell player what to do. This argument is enumerated and can be:
+<cite>play/pause</cite>, <cite>pause</cite>, <cite>play</cite>,
+<cite>stop</cite>, <cite>seek</cite> or <cite>volume</cite>.
+Command <cite>play/pause</cite> will play or pause video depending on
+current state. Command <cite>stop</cite> will pause video and stop
+buffering it. Commands <cite>seek</cite and<cite>volume</cite> will seek
+or change volume for value given by second argument.</td>
                                 </tr>
                                 <tr>
                                     <td class="name">
@@ -404,7 +423,12 @@
                                     <td class="attributes">
                                         &lt;optional><br>
                                     </td>
-                                    <td class="description last">This argument is needed when issuing commands <cite>seek</cite> and<cite>volume</cite>. If this argument is number or string written as&lt;number&gt;% (ex. 73%) change will be absolute regardless of currentstate. If argument is string written as +&lt;number&gt;% or-&lt;number&gt;% (ex. +38% or -49%) change will be relative to currentstate.</td>
+                                    <td class="description last">This argument is needed when issuing commands <cite>seek</cite> and
+<cite>volume</cite>. If this argument is number or string written as
+&lt;number&gt;% (ex. 73%) change will be absolute regardless of current
+state. If argument is string written as +&lt;number&gt;% or
+-&lt;number&gt;% (ex. +38% or -49%) change will be relative to current
+state.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -414,7 +438,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2125
+                                xtt.js, line 2165
                             </li></ul>
                         </dd>
                     </dl>
@@ -456,7 +480,9 @@
                                     <td class="default">
                                         undefined
                                     </td>
-                                    <td class="description last">Should player be expanded (<code>true</code>) or shrinked(<code>false</code>). If this parameter is missing player size will bealternated (if it was wide it will become normal and vice versa).</td>
+                                    <td class="description last">Should player be expanded (<code>true</code>) or shrinked
+(<code>false</code>). If this parameter is missing player size will be
+alternated (if it was wide it will become normal and vice versa).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -466,7 +492,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2195
+                                xtt.js, line 2235
                             </li></ul>
                         </dd>
                     </dl>
@@ -479,7 +505,9 @@
                     </dt>
                     <dd>
                         <div class="description">
-                            This method will play only one frame of video. This is usually emulatedusing time-out, but since Opera 11.60 for HTML 5 videos it willaccurately play one frame (it will advance video for 40ms).
+                            This method will play only one frame of video. This is usually emulated
+using time-out, but since Opera 11.60 for HTML 5 videos it will
+accurately play one frame (it will advance video for 40ms).
                         </div>
                         <dl class="details">
                         <dt class="tag-source">
@@ -487,7 +515,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2245
+                                xtt.js, line 2285
                             </li></ul>
                         </dd>
                     </dl>
@@ -529,7 +557,8 @@
                                     <td class="default">
                                         true
                                     </td>
-                                    <td class="description last">Whether annotations should be visible (<code>false</code>) or hidden(<code>true</code>).</td>
+                                    <td class="description last">Whether annotations should be visible (<code>false</code>) or hidden
+(<code>true</code>).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -539,7 +568,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2265
+                                xtt.js, line 2305
                             </li></ul>
                         </dd>
                     </dl>
@@ -581,7 +610,13 @@
                                     <td class="default">
                                         3
                                     </td>
-                                    <td class="description last">New value for auto-hide option. Possible options are:0 = controls and progress bar always visible,1 = controls and progress bar will be hidden after few seconds,2 = controls will be visible; progress bar will be minimised	   after few seconds,3 = controls will be hidden; progress bar will be minimised    after few seconds.</td>
+                                    <td class="description last">New value for auto-hide option. Possible options are:
+0 = controls and progress bar always visible,
+1 = controls and progress bar will be hidden after few seconds,
+2 = controls will be visible; progress bar will be minimised
+	   after few seconds,
+3 = controls will be hidden; progress bar will be minimised
+    after few seconds.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -591,7 +626,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2304
+                                xtt.js, line 2344
                             </li></ul>
                         </dd>
                     </dl>
@@ -612,13 +647,14 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2329
+                                xtt.js, line 2369
                             </li></ul>
                         </dd>
                     </dl>
                         <h5>Returns:</h5>
                         <div class="param-desc">
-                            <code>true</code> if loop is forced or looping section;<code>false</code> otherwise.
+                            <code>true</code> if loop is forced or looping section;
+<code>false</code> otherwise.
                         </div>
                         <dl>
                             <dt>
@@ -660,7 +696,8 @@
                             		Boolean
                             	</span>
                                     </td>
-                                    <td class="description last">Whether to seek forward (<code>true</code>)or backwards (<code>false</code>).</td>
+                                    <td class="description last">Whether to seek forward (<code>true</code>)
+or backwards (<code>false</code>).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -670,7 +707,7 @@
                         </dt>
                         <dd class="tag-source">
                             <ul class="dummy"><li>
-                                xtt.js, line 2391
+                                xtt.js, line 2431
                             </li></ul>
                         </dd>
                     </dl>
@@ -684,7 +721,7 @@
     </nav>
     <br clear="both">
     <footer>
-        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Fri Oct 11 2013 00:10:30 GMT-0300 (BRT)
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Apr 14 2014 19:42:32 GMT-0300 (BRT)
     </footer>
 </body>
 </html>

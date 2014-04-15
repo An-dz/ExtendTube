@@ -4,7 +4,16 @@
 	- (hyphen) - removed
 	* (asterisk) - fixed
 
-24.01.2014 - 1.21.3
+14.04.2014 - 1.22
+	# lyrics below video title
+	# new update function
+	* player not initialising
+	* experimental fix API injection (ajax)
+	* custom colours in new elements
+	- hide comments sub-options
+	- hide guide on vids option
+
+24.01.2014 - 1.21.4
 	* Fixed embedded videos
 
 07.01.2014 - 1.21.3
