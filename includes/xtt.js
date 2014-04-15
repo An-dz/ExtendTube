@@ -1123,18 +1123,6 @@ function domNodeRemoved(event) {
 	if (preferences.ratevideos)
 		xtt.ui.add.videoRatings()
 
-	if (!xtt.video.isChannel && !xtt.video.isWatch)
-		return xtt.ui.apply.cleanPage()
-
-	// Add class for hiding featured videos.
-	var featured = document.querySelector("#watch7-sidebar, #watch-sidebar")
-	if (featured) {
-		if (featured.childElementCount == 2)
-			featured.firstElementChild.classList.add("ext-featured-videos")
-		if (featured.lastElementChild != featured.firstElementChild)
-			featured.lastElementChild.classList.add("ext-related-videos")
-	}
-
 	xtt.ui.apply.cleanPage()
 	modifyDocument(skip)
 }
