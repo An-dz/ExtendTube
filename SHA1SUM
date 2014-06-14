@@ -16,8 +16,8 @@ c65633a33d74d4dc5f93a3073235295b22ca9f80  ./api/xtt.ui.add.html
 3c8f261e38685b6b5c84c7c62e0821ba396b04b8  ./api/xtt.ui.html
 ae9d53d2664076230b15bb327fe49c5019c7044e  ./api/xtt.ui.remove.html
 92ed60b69969f8da0ac19241c67ecca35e79a37a  ./api/xtt.video.html
-a3518b6280701a99c58fa0e0c646e6390af1c483  ./Change.log
-8a9996854195206df20f522d5968ecda0cb7667a  ./config.xml
+8cabc8492ac3fb81c929a73da2e33338852903c2  ./Change.log
+85eb0ab3d06cfdf634b784c2e81dd60d2dbfbced  ./config.xml
 2b8b815229aa8a61e483fb4ba0588b8b6c491890  ./COPYING.md
 cd02610d22cd34500a557b6fb9e6ad372ca56752  ./includes/bugs.js
 1866ae0e2b41f67c5dd0460c1f68b6b88249c526  ./includes/xtt.js
@@ -43,7 +43,7 @@ a30605ecc72bf18b47626b200488d3697dedc73a  ./lib/opt-listen.js
 a5cf4046c8a541e0ef2f4a27c0b31f27e4dc35ad  ./lib/opt-scats.js
 c7750dbd5550d4ae5b1e2696098276b83cf9fa0f  ./lib/popup.js
 f25526ab84a61d6f25919d8c6e6314c3ae01d652  ./lib/preferences.js
-d4034520ebea7cb28a159d63c87a399c63b4d537  ./lib/style.js
+525a72f7ad5abe54061b4dc35a2809f120f91c4e  ./lib/style.js
 f4baec31d60d9d0541f4a22a1c7a84c605b36755  ./lib/translations.js
 6c9c5bee2660ad3d1b84fe2330290d0950c7b73e  ./lib/update.js
 d385e07900f38df473d064476bdc17847fc7d5b1  ./lib/videoFormat.js
