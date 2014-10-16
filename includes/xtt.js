@@ -1681,8 +1681,8 @@ function injectApiSetter(text) {
 		}
 	}
 
-	return text.replace(/(\.getInternalApiInterface\(\)\);for\()/,
-						"$1sEx=(" + apiSetter.toString() + ")(this),")
+	return text.replace(/(\.getInternalApiInterface\(\)\))(,|;for\()/,
+						"$1$2sEx=(" + apiSetter.toString() + ")(this),")
 }
 
 function injectForceLoopCheck(text) {
