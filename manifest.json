@@ -1,0 +1,65 @@
+{
+	"name": "ExtendTube",
+	"version": "0.1.22.3",
+	"developer": {
+		"name": "André Zanghelini (An_dz)",
+		"url": "http://an-dz.weebly.com/"
+	},
+	"description": "Extend YouTube. Bend it to your will.",
+	"homepage_url": "http://an-dz.weebly.com/extendtube",
+
+	"default_locale": "en",
+	"icons": {
+		"16": "share/image/fav.png"
+		// "48": "",
+		// "128": ""
+	},
+	"options_page": "options.html",
+
+	"content_scripts": [
+		{
+			"js": ["includes/xtt.js"],
+			"matches": [
+				"*://www.youtube.com/*",
+				"*://www.youtube-nocookie.com/*"
+			],
+			"exclude_matches": [
+				"*://www.youtube.com/my_*",
+				"*://www.youtube.com/inbox*",
+				"*://www.youtube.com/account*",
+				"*://www.youtube.com/editor*",
+				"*://www.youtube.com/analytics*",
+				"*://www.youtube.com/pair*"
+			]
+		}
+	],
+	"background": {
+		"scripts": [
+			"lib/ext/Array.js",
+			"lib/ext/Date.js",
+			"lib/ext/Number.js",
+			"lib/ext/Object.js",
+			"lib/ext/Storage.js",
+			"lib/ext/String.js",
+			"lib/init.js",
+			"lib/localisedStrings.js",
+			"lib/style.js",
+			"lib/videoFormat.js",
+			"lib/preferences.js",
+			"lib/background.js"
+		]
+	},
+	"page_action": {
+		"default_icon": "share/image/fav.png",
+		"default_title": "ExtendTube",
+		"default_popup": "share/page/popup.html"
+	},
+
+	"permissions": [
+		"tabs",
+		"https://extension-updates.opera.com/*",
+		"http://www.weebly.com/uploads/*/update"
+	],
+
+	"manifest_version": 2
+}
